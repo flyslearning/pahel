@@ -11,6 +11,7 @@ import Home from "./pages/Home/Home";
 import Resources from "./pages/Resources/Resources";
 import Teams from "./pages/Teams/Teams";
 import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
+import AboutUs from "./pages/AboutUs/AboutUs";
 import RefundPolicy from "./pages/RefundPolicy/RefundPolicy";
 import CancellationPolicy from "./pages/CancellationPolicy/CancellationPolicy";
 import TermsConditions from "./pages/TermsCondition/TermsCondition";
@@ -37,6 +38,7 @@ function App() {
           <Route path="/paymentsuccess" element={<PaymentSuccess />} />
           <Route path="/our-team" element={<Teams />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/about-us" element={<AboutUs />} />
           <Route path="/shipping" element={<Shipping />} />
           <Route path="/refund-policy" element={<RefundPolicy />} />
           <Route

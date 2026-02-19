@@ -54,7 +54,7 @@ const Footer = () => {
             <div className="second-footer-block">
               <p className="footer-heading">Explore</p>
               <p className="footer-points">
-                <a href="/#working" className="footer-hyperlink-text-block">
+                <a href="/about-us" className="footer-hyperlink-text-block">
                   About Us
                 </a>
               </p>

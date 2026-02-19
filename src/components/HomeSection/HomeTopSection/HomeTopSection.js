@@ -1,63 +1,72 @@
 import React from "react";
 import "./HomeTopSection.css";
 
+// Assets
 import carandgirl from "../../../assets/images/carandgirl.png";
 import squarebg from "../../../assets/images/square-bg.png";
-import playstore from "../../../assets/images/playstore.png";
+import playstore from "../../../assets/images/playstore.webp";
 import applestore from "../../../assets/images/applestore.png";
 
 const HomeTopSection = () => {
   return (
-    <div className="home-top-main-section">
-      <div className="home-top-inner-section">
-        <div className="home-top-inner-section-left">
-          <div className="main-info-section ">
-            <p className="pink-head font-500">
-              PINK : A HELPDRIVE EXPRESS PVT LTD
-            </p>
-            <h1 className="font-zilla main-header font-bold">
-              Of Women, For Women, By Women
+    <section className="pahel-hero-wrapper">
+      {/* Background Animated Blobs */}
+      <div className="hero-orb orb-pink"></div>
+      <div className="hero-orb orb-blue"></div>
+
+      <div className="pahel-hero-container">
+        {/* Left Side: Content */}
+        <div className="hero-left">
+          <div className="animate-reveal">
+            <div className="hero-badge">
+              <span>PINK : A HELPDRIVE EXPRESS PVT LTD</span>
+            </div>
+          </div>
+          
+          <div className="animate-reveal delay-200">
+            <h1 className="hero-title">
+              Of Women, <span className="highlight-text">For Women</span>, <br /> By Women
             </h1>
-            <p className="font-semibold hindi-line">
+          </div>
+          
+          <div className="animate-reveal delay-400">
+            <p className="hero-hindi">
               स्त्रियाः स्त्रियाः कृते स्त्रियाः कृते
             </p>
-            <div className="btn-container">
-  <button
-    className="main-btn"
-    onClick={() =>
-      window.open(
-        "https://play.google.com/store/apps/details?id=com.pinkpahel.passenger",
-        "_blank"
-      )
-    }
-  >
-    <img src={playstore} alt="Play Store" />
-    Download from <br /> Playstore
-  </button>
+          </div>
 
-  <button
-    className="main-btn"
-    onClick={() =>
-      window.open(
-        "https://apps.apple.com/app/id1234567890",
-        "_blank"
-      )
-    }
-  >
-    <img src={applestore} alt="App Store" />
-    Download from <br /> Appstore
-  </button>
-</div>
+          <div className="hero-store-group animate-reveal delay-600">
+            <a 
+              href="https://play.google.com/store/apps/details?id=com.pinkpahel.passenger" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="store-link"
+            >
+              <img src={playstore} alt="Google Play" className="store-img" />
+            </a>
+
+            <a 
+              href="https://apps.apple.com/app/id1234567890" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="store-link"
+            >
+              <img src={applestore} alt="App Store" className="store-img" />
+            </a>
           </div>
         </div>
-        <div className="home-top-inner-section-right">
-          <img src={squarebg} className="bg-top" />
-          <div className="main-img-container">
-            <img src={carandgirl} className="home-main-img" />
+
+        {/* Right Side: Visuals */}
+        <div className="hero-right">
+          <div className="visual-container">
+            <img src={squarebg} className="rotating-pattern" alt="" />
+            <div className="image-float-wrap">
+              <img src={carandgirl} className="hero-main-image" alt="PAHEL Women Service" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

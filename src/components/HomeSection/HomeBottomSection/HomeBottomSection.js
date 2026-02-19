@@ -1,147 +1,124 @@
 import React from "react";
-// import Lottie from "lottie-react";
-// import improvedSafety from "../../../assets/Animations/Improved_Safety.json"
 import "./HomeBottomSection.css";
 
+// Assets
 import pinkLine from "../../../assets/images/rectangle-bg.png";
-import squarebg from "../../../assets/images/square-bg.png";
 import improvedsafe from "../../../assets/images/improvedsafe.png";
 import employement from "../../../assets/images/employment.png";
 import encourage from "../../../assets/images/encourage.png";
-import disrupt from "../../../assets/images/disrupt.png"
-import gendergap from "../../../assets/images/gendergap.png"
+import disrupt from "../../../assets/images/disrupt.png";
+import gendergap from "../../../assets/images/gendergap.png";
 import womens from "../../../assets/images/womens.png";
 import customericon from "../../../assets/images/customericon.png";
 import logo from "../../../assets/images/logo.png";
-import women_bg from "../../../assets/images/women_bg.png"; 
 
 const HomeBottomSection = () => {
+  const features = [
+    {
+      img: improvedsafe,
+      title: "Improved Safety",
+      desc: "Women-only transportation services provide a safe, secure environment for women and children. Female drivers offer empathy and understanding, significantly reducing concerns about harassment.",
+      reverse: false,
+    },
+    {
+      img: employement,
+      title: "Employment Opportunities",
+      desc: "This initiative creates professional pathways for women drivers, empowering them with financial independence and a means of livelihood in a traditionally male-dominated sector.",
+      reverse: true,
+    },
+    {
+      img: encourage,
+      title: "Encourage Empowerment",
+      desc: "When women feel safe traveling, they participate more actively in the workforce, education, and social activities, pursuing their goals without hesitation.",
+      reverse: false,
+    },
+    {
+      img: disrupt,
+      title: "Disrupt Stereotypes",
+      desc: "By putting women at the wheel, we challenge traditional gender roles and pave the way for more women to succeed in industries once considered off-limits.",
+      reverse: true,
+    },
+    {
+      img: gendergap,
+      title: "Reducing Gender Gaps",
+      desc: "Transportation barriers often limit access to education. PAHEL bridges this gap, enabling women to be self-sufficient and mobile on their own terms.",
+      reverse: false,
+    },
+  ];
+
   return (
-    <div className="home-bottom-main-section">
-      {/* <img src={squarebg} className="bottom-square-bg" /> */}
-      <div className="Home-bottom-section">
-        <div className="bottom-info-container">
-          <img src={squarebg} className="bottom-square-bg" />
-          <img src={pinkLine} />
-          <h2 className="font-zilla">Why Nation needs PAHEL?</h2>
-          <p className="font-zilla font-500">
-            Women-only transportation services can provide a safe and
-            comfortable environment for women who are traveling alone or with
-            their children. Women often feel uneasy and vulnerable when
-            traveling alone, especially at night. A female driver may be more
-            empathetic and understanding towards female passengers' concerns.
-            The passengers will feel more secure and relaxed, reducing the
-            chances of any incidents of harassment or assault.
+    <section className="pahel-premium-wrapper">
+      {/* Dynamic Background Elements */}
+      <div className="bg-gradient-blur"></div>
+      
+      <div className="pahel-container">
+        
+        {/* Main Header */}
+        <div className="pahel-header-reveal">
+          <img src={pinkLine} className="pulse-accent" alt="" />
+          <h2 className="title-display">
+            Why Nation needs <span className="highlight-pink">PAHEL?</span>
+          </h2>
+          <p className="subtitle-lead">
+            Redefining safety and mobility through a female-centric ecosystem. 
+            We provide more than just a ride; we provide peace of mind.
           </p>
         </div>
-        <div className="bottom-info-second">
-          <img src={improvedsafe} />
-          {/* <Lottie animationData={improvedSafety} /> */}
-          <div className="bottom-info-second-description">
-            <h2 className="font-zilla">Improved Safety</h2>
-            <p className="font-zilla font-500">
-              Women-only transportation services can provide a safe and
-              comfortable environment for women who are traveling alone or with
-              their children. Women often feel uneasy and vulnerable when
-              traveling alone, especially at night. A female driver may be more
-              empathetic and understanding towards female passengers' concerns.
-              The passengers will feel more secure and relaxed, reducing the
-              chances of any incidents of harassment or assault.
-            </p>
-          </div>
+
+        {/* Feature Grid with Smooth Reveal */}
+        <div className="features-stack">
+          {features.map((item, index) => (
+            <div 
+              key={index} 
+              className={`feature-card-row ${item.reverse ? "is-reversed" : ""}`}
+            >
+              <div className="feature-visual">
+                <div className="blob-backdrop"></div>
+                <img src={item.img} alt={item.title} className="floating-hero" />
+              </div>
+              <div className="feature-info">
+                <span className="step-number">0{index + 1}</span>
+                <h3 className="feature-heading">{item.title}</h3>
+                <p className="feature-body">{item.desc}</p>
+                <div className="animated-bar"></div>
+              </div>
+            </div>
+          ))}
         </div>
-        <div className="bottom-info-second reverse-second">
-          <img src={employement} />
-          <div className="bottom-info-second-description">
-            <h2 className="font-zilla">Employment Opportunities</h2>
-            <p className="font-zilla font-500">
-              This initiative can create employment opportunities for women
-              drivers who face discrimination or bias in the traditional
-              transportation industry. It can empower women by providing them
-              with a means of livelihood and financial independence.
-            </p>
-          </div>
-        </div>
-        {/* <img src={squarebg} className="bottom-square-second-bg" /> */}
-        <div className="bottom-info-second">
-          <img src={encourage} />
-          <div className="bottom-info-second-description">
-            <img src={squarebg} className="bottom-square-second-bg" />
-            <h2 className="font-zilla">Encourages Women Empowerment</h2>
-            <p className="font-zilla font-500">
-              Women-only transportation services can promote women's empowerment
-              by encouraging them to venture out and pursue their goals. Women
-              who feel safe and comfortable traveling can participate more
-              actively in the workforce, education, and social activities.
-            </p>
-          </div>
-        </div>
-        <div className="bottom-info-second reverse-second">
-          <img className="disrupt-img" src={disrupt} />
-          <div className="bottom-info-second-description">
-            <h2 className="font-zilla">Disrupt the Traditional Stereotypes</h2>
-            <p className="font-zilla font-500">
-              It can challenge the traditional gender roles associated with the
-              transportation industry, which has historically been
-              male-dominated. By creating a female-centric transportation
-              service, it can break down barriers and pave the way for more
-              women to enter and succeed in traditionally male-dominated
-              industries.
-            </p>
-          </div>
-        </div>
-        {/* <img src={squarebg} className="bottom-third-second-bg" /> */}
-        <div className="bottom-info-second">
-          <img src={gendergap} />
-          <div className="bottom-info-second-description">
-            <img src={squarebg} className="bottom-third-second-bg" />
-            <h2 className="font-zilla">Reducing Gender Gaps</h2>
-            <p className="font-zilla font-500">
-              Women often face limitations due to transportation barriers, which
-              can lead to a lack of access to education and job opportunities.
-              By providing a transportation service exclusively for women, this
-              service can help bridge this gap and enable women to be more
-              self-sufficient.
-            </p>
-          </div>
-        </div>
-        <div className="last-info-section">
-          <img src={womens} />
-          <img src={women_bg} className="women-img-bg" />
-          <img src={logo} className="last-info-logo-1" />
-          <img src={logo} className="last-info-logo-2" />
-          <div className="last-info-description">
-            <img src={pinkLine} />
-            <h2 className="font-zilla">Making innovations for Women</h2>
-            <ul>
-              <li>
-                <img src={customericon} />
-                <div>
-                  <p className="font-zilla font-semibold">For Customers</p>
-                  <p className="font-500">
-                    We aim to provide exceptional customer service, meeting the
-                    needs and exceptations of our customers by delivering
-                    quality services that are efficient,affordable and reliable.
-                  </p>
+
+        {/* Professional Innovation Card */}
+        <div className="innovation-master-card">
+          <div className="innovation-grid">
+            <div className="visual-composition">
+              <img src={womens} className="main-display-img" alt="PAHEL Women" />
+              <div className="badge-logo float-tl"><img src={logo} alt="PAHEL" /></div>
+              <div className="badge-logo float-br"><img src={logo} alt="PAHEL" /></div>
+            </div>
+
+            <div className="innovation-text-group">
+              <img src={pinkLine} className="line-mini" alt="" />
+              <h2 className="innovation-h2">Making Innovations for Women</h2>
+              
+              <div className="benefit-glass-item">
+                <div className="icon-wrap"><img src={customericon} alt="icon" /></div>
+                <div className="benefit-content">
+                  <h4>For Customers</h4>
+                  <p>Exceptional service meeting the expectations of modern women by delivering quality that is efficient, affordable, and reliable.</p>
                 </div>
-              </li>
-              <li>
-                <img src={customericon} />
-                <div>
-                  <p className="font-zilla font-semibold">For Drivers</p>
-                  <p className="font-500">
-                    Female who know driving, are housewives want to do part time
-                    job,generate passive income or are unemployed can join with
-                    us.
-                  </p>
+              </div>
+
+              <div className="benefit-glass-item">
+                <div className="icon-wrap"><img src={customericon} alt="icon" /></div>
+                <div className="benefit-content">
+                  <h4>For Drivers (Sakhis)</h4>
+                  <p>Join our mission. Whether you are a housewife or looking for part-time income, generate financial freedom with us.</p>
                 </div>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </div>
-        {/* <img src={squarebg} className="bottom-third-second-bg" /> */}
       </div>
-    </div>
+    </section>
   );
 };
 
