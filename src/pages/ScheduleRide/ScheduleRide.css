@@ -3,13 +3,14 @@
 /* --- ROOT STYLES --- */
 .ScheduleRide {
   max-width: 1200px;
-  width: 95%; /* Better than fixed width for responsiveness */
+  width: 95%;
   margin: 0 auto;
-  padding: 8rem 0 5rem 0; /* Adjusted padding for better fit */
+  padding: 8rem 15px 5rem 15px;   /* left-right padding add kiya */
   font-family: 'Plus Jakarta Sans', sans-serif;
   color: #1a1a1a;
   box-sizing: border-box;
 }
+
 
 .ride-header-wrapper {
   text-align: center;
@@ -24,11 +25,13 @@
 }
 
 .ride-main-header {
-  font-size: clamp(2rem, 5vw, 3.5rem); /* Responsive font sizing */
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-family: "Zilla Slab", serif;
   margin-bottom: 0.5rem;
-  line-height: 1.1;
+  line-height: 1.2;      /* 1.1 se 1.2 karo */
+  word-break: break-word; 
 }
+
 
 .ride-tagline {
     color: #e55a7b;
@@ -251,6 +254,12 @@
         padding: 30px 20px;
     }
 }
+@media (max-width: 768px) {
+  .ScheduleRide {
+    padding-top: 8.5rem;   /* navbar height ke hisaab se adjust karo */
+  }
+}
+
 
 @media (max-width: 600px) {
     .form-grid {
