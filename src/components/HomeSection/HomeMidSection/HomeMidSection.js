@@ -121,6 +121,7 @@ const HomeMidSection = () => {
 
             <div className="calculator-inputs-row">
               <Autocomplete
+              
                 onLoad={onPickupLoad}
                 onPlaceChanged={onPickupPlaceChanged}
                 options={{
