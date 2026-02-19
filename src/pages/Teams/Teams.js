@@ -10,6 +10,7 @@ import founder3 from "../../assets/images/founder3.png";
 
 const Teams = () => {
   const images = [founderimage, founder2, founder3];
+
   const foundersDescriptions = [
     {
       description:
@@ -40,27 +41,31 @@ const Teams = () => {
   };
 
   const handleNextClick = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setCurrentIndex(
+      (prevIndex) => (prevIndex + 1) % images.length
+    );
   };
 
   const handleTextCarouselClick = (index) => {
     setCurrentIndex(index);
   };
 
+  // ✅ FIXED useEffect (no eslint warning now)
   useEffect(() => {
     const interval = setInterval(() => {
-      handleNextClick();
+      setCurrentIndex(
+        (prevIndex) => (prevIndex + 1) % images.length
+      );
     }, 3000);
 
     return () => {
       clearInterval(interval);
     };
-  }, [currentIndex]);
+  }, [images.length]);
 
   useEffect(() => {
-    // Reset the scroll position to the top when the component mounts
     window.scrollTo(0, 0);
-  }, []); 
+  }, []);
 
   return (
     <div className="Teams">
