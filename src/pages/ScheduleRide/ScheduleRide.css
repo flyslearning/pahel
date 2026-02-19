@@ -51,10 +51,10 @@
 
 /* --- SIDEBAR --- */
 .sidebar-card {
-    background: #1a1a1a;
+    background: #fff5f7;
     padding: 40px 30px;
     border-radius: 24px;
-    color: white;
+    color: black;
     position: sticky;
     top: 40px;
 }
@@ -87,8 +87,8 @@
     padding-top: 25px;
 }
 
-.support-box p { color: #888; font-size: 0.85rem; margin-bottom: 5px; }
-.support-box strong { font-size: 1.1rem; color: #fff; }
+.support-box p { color: grey; font-size: 0.85rem; margin-bottom: 5px; }
+.support-box strong { font-size: 1.1rem; color: black; }
 
 /* --- FORM CONTAINER --- */
 .form-container-main {
