@@ -22,15 +22,32 @@ const HomeTopSection = () => {
               स्त्रियाः स्त्रियाः कृते स्त्रियाः कृते
             </p>
             <div className="btn-container">
-              <button className="main-btn">
-                <img src={playstore} alt="My Image" />
-                Download from <br /> Playstore
-              </button>
-              <button className="main-btn">
-                <img src={applestore} alt="My Image" />
-                Download from <br /> Appstore
-              </button>
-            </div>
+  <button
+    className="main-btn"
+    onClick={() =>
+      window.open(
+        "https://play.google.com/store/apps/details?id=com.pinkpahel.passenger",
+        "_blank"
+      )
+    }
+  >
+    <img src={playstore} alt="Play Store" />
+    Download from <br /> Playstore
+  </button>
+
+  <button
+    className="main-btn"
+    onClick={() =>
+      window.open(
+        "https://apps.apple.com/app/id1234567890",
+        "_blank"
+      )
+    }
+  >
+    <img src={applestore} alt="App Store" />
+    Download from <br /> Appstore
+  </button>
+</div>
           </div>
         </div>
         <div className="home-top-inner-section-right">
