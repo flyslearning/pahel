@@ -1,0 +1,53 @@
+.banner {
+  background: linear-gradient(to right, #e55a7b, #b23b57);
+  height: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  padding: 0.5rem 0;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* width: 100vw; */
+  overflow: hidden;
+  position: fixed;
+  z-index: 1000;
+}
+
+.car {
+  padding-right: 1rem;
+}
+
+.car-text{
+  font-size: 18px;
+}
+
+.linear-gradient {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.animated-text {
+  animation: moveRightToLeft 14s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes moveRightToLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+/* For tab view */
+@media (min-width: 768px) and (max-width: 1023px){
+  .banner {
+    height: 1.2rem;
+    padding: 1rem 0;
+  } 
+  
+}

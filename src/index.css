@@ -1,0 +1,107 @@
+/* font family import  */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Zilla+Slab:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Zilla+Slab:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Zilla+Slab:wght@400;500;600;700&display=swap");
+
+/* Reset all default styling */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+  list-style-type: none;
+  font-family: "Poppins", sans-serif;
+
+  /* font-family: "Zilla Slab", serif; */
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+.font-zilla {
+  font-family: "Zilla Slab", serif;
+}
+
+.font-400 {
+  font-weight: 400;
+}
+
+.font-500 {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.redirects {
+  text-decoration: none;
+  color: #242424;
+  font-weight: 500;
+}
+
+
+/* Optionally, set a baseline font size for consistent scaling */
+
+/* Base styles for desktops */
+/* ... */
+
+/* Large desktops or high-resolution displays (1440px and up) */
+@media (min-width: 1440px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+/* Desktops (1280px - 1439px) */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/* Laptops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .redirects {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+  }
+}
+
+
+/* Tablets (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+/* Mobile devices (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/* Small mobile devices (up to 479px) */
+@media (max-width: 479px) {
+  html {
+    font-size: 14px;
+  }
+}

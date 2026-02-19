@@ -1,0 +1,295 @@
+.main-resource {
+  overflow: hidden;
+  position: relative;
+}
+.Resources {
+  width: 1250px;
+  margin: 0 auto;
+  padding-top: 11rem;
+  padding-left: 15px;
+  padding-right: 15px;
+  overflow: hidden;
+}
+
+.resources-first-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.resource-first-bg {
+  position: absolute;
+  width: 60%;
+  top: 70px;
+  right: -680px;
+  z-index: -2;
+}
+
+.resource-second-bg {
+  position: absolute;
+  width: 60%;
+  top: 33%;
+  left: -750px;
+  z-index: -2;
+}
+
+.resource-third-bg {
+  position: absolute;
+  width: 65%;
+  bottom: 130px;
+  right: -780px;
+  z-index: -2;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.info-img {
+  width: 30%;
+  align-self: center;
+}
+
+.first-info-section {
+  width: 50%;
+  overflow: hidden;
+}
+
+.header-info {
+  margin: 1.2rem 0;
+  font-family: "Zilla Slab", serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 44px;
+}
+
+.description-info {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+}
+
+@media only screen and (max-width: 1520px) {
+  .Resources {
+    width: auto;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .resource-first-bg {
+    position: absolute;
+    width: 60%;
+    top: 80px;
+    right: -500px;
+    z-index: -2;
+  }
+
+  .resource-second-bg {
+    position: absolute;
+    width: 60%;
+    top: 35%;
+    left: -500px;
+    z-index: -2;
+  }
+
+  .resource-third-bg {
+    position: absolute;
+    bottom: 130px;
+    width: 60%;
+    right: -500px;
+    z-index: -2;
+  }
+}
+/* Tablets (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .Resources {
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .resources-first-info {
+    width: 100%;
+    /* margin: 0 auto; */
+  }
+
+  .resource-first-bg {
+    position: absolute;
+    width: 100%;
+    top: 80px;
+    right: -800px;
+    z-index: -2;
+}
+
+  .resource-second-bg {
+    position: absolute;
+    width: 100%;
+    top: 48%;
+    left: -600px;
+    z-index: -2;
+  }
+
+  .resource-third-bg {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    right: -700px;
+    z-index: -2;
+}
+
+  .header-info {
+    font-size: 2.8rem;
+  }
+
+  .description-info {
+    font-size: 1.4rem;
+  }
+
+  .pink-line {
+    width: 80vw;
+  }
+  .info-img {
+    width: 60vw;
+    /* display: none; */
+  }
+  .first-info-section {
+    width: 100%;
+    margin-top: 5rem;
+  }
+}
+
+/* Mobile devices (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+  .Resources {
+    width: auto;
+    padding-top: 8rem;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .resource-first-bg {
+    position: absolute;
+    width: 100%;
+    top: 175px;
+    right: -500px;
+    z-index: -2;
+  }
+
+  .resource-second-bg {
+    position: absolute;
+    width: 100%;
+    top: 48%;
+    left: -600px;
+    z-index: -2;
+  }
+
+  .resource-third-bg {
+    position: absolute;
+    bottom: 130px;
+    width: 60%;
+    right: -350px;
+    z-index: -2;
+  }
+
+  .info-img {
+    width: 90vw;
+    margin-bottom: 4rem;
+  }
+
+  .first-info-section {
+    width: 100%;
+  }
+}
+
+/* Small mobile devices (up to 479px) */
+@media (max-width: 479px) {
+  .Resources {
+    width: auto;
+    padding-top: 8rem;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow-x: hidden;
+  }
+
+  .resources-first-info {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  .resource-first-bg {
+    position: absolute;
+    width: 100%;
+    top: 80px;
+    right: -350px;
+    z-index: -2;
+  }
+
+  .resource-second-bg {
+    position: absolute;
+    width: 100%;
+    top: 45%;
+    left: -325px;
+    z-index: -2;
+  }
+
+  .resource-third-bg {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    right: -350px;
+    z-index: -2;
+}
+
+  .header-info {
+    line-height: 30px;
+    margin: 10px 0;
+  }
+
+  .pink-line {
+    width: 70vw;
+    /* display: none; */
+  }
+
+  .info-img {
+    width: 60%;
+    /* display: none; */
+  }
+
+  .first-info-section {
+    width: 100%;
+    margin-top: 3rem;
+    /* display: none; */
+  }
+}
+
+@media (max-width: 375px) {
+  .resource-first-bg {
+    position: absolute;
+    width: 100%;
+    top: 80px;
+    right: -250px;
+    z-index: -2;
+  }
+
+  .resource-second-bg {
+    position: absolute;
+    width: 100%;
+    top: 48%;
+    left: -245px;
+    z-index: -2;
+  }
+
+  .resource-third-bg {
+    position: absolute;
+    bottom: 2%;
+    width: 100%;
+    right: -250px;
+    z-index: -2;
+}
+}

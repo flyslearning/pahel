@@ -1,0 +1,125 @@
+.faq-main-section {
+  width: 1250px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.faq-section {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 40px #00000014;
+  border-radius: 26px;
+  padding: 3rem 2rem;
+  margin-bottom: 3rem;
+}
+
+.faq-header {
+  font-size: 2rem;
+  text-align: center;
+  font-family: "Zilla Slab", serif;
+  color: #e55a7b;
+  font-weight: 700;
+  padding-bottom: 2rem;
+}
+
+.accordion-container {
+  width: 100%;
+}
+
+.accordion-item {
+  margin-bottom: 0.9rem;
+  background: #fafafa 0% 0% no-repeat padding-box;
+  border: 1px solid #fafafa;
+  border-radius: 10px;
+}
+
+.accordion-question {
+  background-color: #fafafa;
+  padding: 0.9rem 2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.accordion-question.open {
+  background-color: #e55a7b;
+  color: #ffffff;
+  .accordian-icon {
+    color: #ffffff;
+  }
+}
+
+.accordion-answer {
+  padding: 0.9rem 2rem;
+}
+
+.accordian-icon {
+  color: #e55a7b;
+}
+
+/*Large Desktops */
+@media (max-width: 1400px) {
+  .faq-main-section {
+    width: auto;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+}
+
+/* Small Laptops and Desktops */
+@media (min-width: 991px) and (max-width: 1199px) {
+  .faq-main-section {
+    width: auto;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 767px) and (max-width: 991px) {
+  .faq-main-section {
+    width: auto;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .accordion-question {
+    font-size: 1.2rem;
+  }
+  .accordion-answer {
+    font-size: 1.2rem;
+}
+}
+
+/* Mobile Phones */
+@media (max-width: 767px) {
+  .faq-main-section {
+    width: auto;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .faq-header {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 507px){
+  .faq-section {
+    padding: 1.5rem 1rem;
+}
+.accordion-question {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+}
+.accordion-answer {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+}
+}

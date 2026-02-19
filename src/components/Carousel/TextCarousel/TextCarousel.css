@@ -1,0 +1,138 @@
+.text-main-section{
+  width: 50%;
+}
+
+.text-carousel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  width: 100%;
+  margin: auto;
+}
+
+.text-carousel-info > div:nth-child(1) {
+  color: #1b1c31;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 4rem;
+}
+
+.text-carousel-info > div:nth-child(2) {
+  color: #e55a7b;
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin: 1rem 0 0 0;
+}
+
+.text-carousel-info > div:nth-child(3) {
+  color: #757095;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.text-carousel-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.text-carousel-btn > img:nth-child(2) {
+  width: 10%;
+  /* height: 1.4rem; */
+  margin: 0 1rem;
+}
+
+.text-carousel-btn > img:nth-child(3),
+.text-carousel-btn > img:nth-child(1) {
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+}
+
+/* Add this animation definition to your CSS file */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.text-carousel-info > div {
+  animation: fadeIn 0.5s ease-in-out; /* Apply the fade-in animation to all text elements */
+}
+
+/* You can create additional animations for other elements as needed */
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.text-carousel-info > div:nth-child(2) {
+  animation: slideInFromRight 0.5s ease-in-out; /* Apply the slide-in animation to the second text element */
+}
+
+/* Mobile devices (480px - 767px) */
+@media (min-width: 479px) and (max-width: 767px) {
+  html {
+    font-size: 18px;
+  }
+
+  .text-main-section {
+    width: 100%;
+}
+
+.text-carousel-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-carousel-info > div:nth-child(1) {
+  text-align: center;
+}
+
+.text-carousel-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1rem 0;
+  justify-content: center;
+}
+
+}
+
+
+/* Small mobile devices (up to 479px) */
+@media (max-width: 479px) {
+  .text-main-section {
+    width: 100%;
+}
+
+.text-carousel-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-carousel-info > div:nth-child(1) {
+  text-align: center;
+}
+
+.text-carousel-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1rem 0;
+  justify-content: center;
+}
+}

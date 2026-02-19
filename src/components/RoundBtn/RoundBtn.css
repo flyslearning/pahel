@@ -1,0 +1,10 @@
+.round-btn {
+  padding: 0.3rem 1.4rem;
+  background: #b23b57 0% 0% no-repeat padding-box;
+  border: 2px solid #b23b57;
+  border-radius: 38px;
+  text-align: center;
+  color: #ffffff;
+  margin: 1.2rem 0;
+  cursor: pointer;
+}
