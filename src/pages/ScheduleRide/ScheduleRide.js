@@ -80,13 +80,32 @@ const ScheduleRide = () => {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="booking-form-element">
-              
+
+
               <div className="form-step-header">
                 <span className="step-num">01</span>
+                <h4>Passenger Details</h4>
+              </div>
+
+              <div className="form-grid">
+                <div className="input-field full-width">
+                  <User className="field-icon" size={18} />
+                  <input type="text" name="name" placeholder="Full Name" onChange={handleChange} required />
+                </div>
+                <div className="input-field">
+                  <Phone className="field-icon" size={18} />
+                  <input type="tel" name="phone" placeholder="Mobile Number" onChange={handleChange} required />
+                </div>
+                <div className="input-field">
+                  <Smartphone className="field-icon" size={18} />
+                  <input type="tel" name="altPhone" placeholder="Alternate Mobile" onChange={handleChange} />
+                </div>
+              </div>
+              <div className="form-step-header">
+                <span className="step-num">02</span>
                 <h4>Trip Destinations</h4>
               </div>
-              
-              <div className="form-grid">
+                            <div className="form-grid">
                 <div className="input-field full-width">
                   <MapPin className="field-icon" size={18} />
                   <input type="text" name="pickup" placeholder="Pickup Address" onChange={handleChange} required />
@@ -104,9 +123,8 @@ const ScheduleRide = () => {
                   <input type="time" name="time" onChange={handleChange} required />
                 </div>
               </div>
-
               <div className="form-step-header">
-                <span className="step-num">02</span>
+                <span className="step-num">03</span>
                 <h4>Select Vehicle Class</h4>
               </div>
 
@@ -124,26 +142,6 @@ const ScheduleRide = () => {
                     </div>
                   </div>
                 ))}
-              </div>
-
-              <div className="form-step-header">
-                <span className="step-num">03</span>
-                <h4>Passenger Details</h4>
-              </div>
-
-              <div className="form-grid">
-                <div className="input-field full-width">
-                  <User className="field-icon" size={18} />
-                  <input type="text" name="name" placeholder="Full Name" onChange={handleChange} required />
-                </div>
-                <div className="input-field">
-                  <Phone className="field-icon" size={18} />
-                  <input type="tel" name="phone" placeholder="Mobile Number" onChange={handleChange} required />
-                </div>
-                <div className="input-field">
-                  <Smartphone className="field-icon" size={18} />
-                  <input type="tel" name="altPhone" placeholder="Alternate Mobile" onChange={handleChange} />
-                </div>
               </div>
 
               <button type="submit" className="booking-cta-btn" disabled={isSubmitting}>
