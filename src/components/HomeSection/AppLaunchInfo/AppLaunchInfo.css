@@ -1,143 +1,163 @@
-.main-section-pahelapp {
-  width: 1250px;
-  margin: 0 auto;
-  padding: 0 15px;
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@700&family=Poppins:wght@400;500;600;700&display=swap');
+
+.app-live-section {
+  padding: 100px 0;
+  background-color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
 }
 
-.Pahelapp {
+.app-live-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 8rem 0 6rem 0;
+  gap: 80px;
 }
 
-.pahelapp-image-container {
-  width: 72%;
+/* --- Visual Mockup --- */
+.app-visual-side {
+  flex: 1.2;
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
-.Pahelapp > div > img {
+.app-floating-mockup {
   width: 100%;
+  max-width: 650px;
+  z-index: 2;
+  filter: drop-shadow(0 30px 50px rgba(0,0,0,0.15));
+  animation: floatMockup 6s infinite ease-in-out;
 }
 
-.Pahelapp > div > p {
-  font-size: 1.4rem;
+.blob-gradient {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(229, 90, 122, 0.12) 0%, transparent 70%);
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.input-container {
-  margin: 1rem 0;
+/* --- Content Styling --- */
+.app-content-side {
+  flex: 1;
 }
 
-.subscribe-input {
-  border: 0;
-  background-color: #f9f9f9;
-  height: 2.2rem;
-  width: 80%;
-  padding: 0.2rem 1rem;
+.live-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff0f3;
+  color: #e55a7b;
+  padding: 6px 16px;
+  border-radius: 50px;
   font-size: 0.8rem;
-  border-radius: 11px;
-  border: 1.6px solid #e55a7a00;
-  border: 1.6px solid #e35979bc;
+  font-weight: 700;
+  margin-bottom: 25px;
 }
 
-.subscribe-input:focus {
-  border: 1.6px solid #e55a7b;
+.dot-blink {
+  width: 8px;
+  height: 8px;
+  background-color: #e55a7b;
+  border-radius: 50%;
+  animation: blink 1.5s infinite;
 }
 
-.subscribe-btn {
-  padding: 0.5rem 1.8rem;
-  background: #b23b57 0% 0% no-repeat padding-box;
-  border: 2px solid #b23b57;
-  border-radius: 38px;
-  text-align: center;
-  color: #ffffff;
+.app-main-title {
+  font-family: 'Zilla Slab', serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: #1a1a1a;
+  line-height: 1.1;
+  margin-bottom: 20px;
 }
 
-/*Large Desktops */
-@media (max-width: 1400px) {
-  .main-section-pahelapp {
-    width: auto;
-  }
+.pink-gradient-text {
+  background: linear-gradient(135deg, #e55a7b 0%, #b23b57 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Tablets (768px - 1023px) */
-@media (min-width: 767px) and (max-width: 1023px) {
-  .main-section-pahelapp {
-    width: auto;
-  }
-
-  .pahelapp-image-container {
-    width: 65%;
-  }
-  .pahelapp-text-container {
-    width: 30%;
-  }
-
-  .Pahelapp > div > p {
-    font-size: 2rem;
-  }
-  .subscribe-input {
-    font-size: 1.2rem;
-  }
-  html {
-    font-size: 12px;
-  }
+.app-description {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 40px;
 }
 
-/* Mobile devices (480px - 767px) */
-@media (min-width: 480px) and (max-width: 767px) {
-  .main-section-pahelapp {
-    width: auto;
-  }
-
-  .pahelapp-image-container {
-    width: 100%;
-  }
-
-  .pahelapp-text-container {
-    /* width: 60%; */
-    margin-top: 1rem;
-  }
-
-  .Pahelapp > div > p {
-    font-size: 1.4rem;
-  }
-  .subscribe-input {
-    font-size: 0.8rem;
-  }
-
-  html {
-    font-size: 18px;
-  }
+/* --- Store Buttons --- */
+.download-actions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
 }
 
-/* Small mobile devices (up to 479px) */
-@media (max-width: 479px) {
-  .main-section-pahelapp {
-    width: auto;
-  }
+.download-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #1a1a1a;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: left;
+}
 
-  .pahelapp-image-container {
-    width: 100%;
-  }
+.download-btn:hover {
+  background: #e55a7b;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(229, 90, 123, 0.2);
+}
 
-  .Pahelapp > div > img {
-    width: 100%;
-    /* margin-bottom: 4rem; */
-  }
+.download-btn .icon { font-size: 1.8rem; }
+.btn-text small { display: block; font-size: 0.7rem; opacity: 0.8; }
+.btn-text strong { font-size: 1.1rem; }
 
-  .pahelapp-text-container {
-    /* width: 100%; */
-    margin-top: 1rem;
-  }
+/* --- Stats --- */
+.app-stats {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #eee;
+}
 
-  .Pahelapp > div > p {
-    font-size: 1.6rem;
-    align-self: center;
-    margin: auto;
-  }
-  .subscribe-input {
-    font-size: 0.85rem;
-  }
+.stat-item { display: flex; flex-direction: column; }
+.stat-item strong { font-size: 1.5rem; color: #1a1a1a; }
+.stat-item span { font-size: 0.9rem; color: #777; }
+.stat-divider { width: 1px; height: 40px; background: #eee; }
+
+/* --- Animations --- */
+@keyframes floatMockup {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes blink {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.2); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 992px) {
+  .app-live-container { flex-direction: column; text-align: center; }
+  .download-actions { justify-content: center; }
+  .app-stats { justify-content: center; }
+  .app-visual-side { order: 1; width: 100%; }
+  .app-content-side { order: 2; width: 100%; }
+}
+
+@media (max-width: 580px) {
+  .download-actions { flex-direction: column; }
+  .download-btn { justify-content: center; }
 }

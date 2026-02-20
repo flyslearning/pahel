@@ -14,7 +14,7 @@
 
 .ride-header-wrapper {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   padding: 0 20px;
 }
 
@@ -241,7 +241,6 @@
         align-items: center;
         gap: 20px;
     }
-    .support-box { border: none; padding: 0; }
     .ScheduleRide { padding-top: 5rem; }
 }
 
@@ -284,4 +283,17 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto 20px;
+}
+@media (max-width: 768px) {
+  .booking-layout {
+    flex-direction: column;
+  }
+
+  .form-container-main {
+    order: 1;
+  }
+
+  .booking-sidebar {
+    order: 2;
+  }
 }

@@ -1,59 +1,36 @@
-import React, { useState } from "react";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import React from "react";
 import "./AppLaunchInfo.css";
 
+// Assets
 import pahelapp from "../../../assets/images/pahelapp.png";
 
 const AppLaunchInfo = () => {
-  const [email, setEmail] = useState("");
-
-  const handleSubscribe = async () => {
-    try {
-      const response = await fetch("https://api.pinkpahel.in/subscribe", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      if (response.ok) {
-        console.log(response);
-        // Subscription successful
-        toast.success("Subscribed successful!");
-      } else {
-        // Subscription failed
-        toast.error("Please enter a valid email address");
-      }
-    } catch (error) {
-      console.error("Error subscribing:", error.message);
-      toast.error("Error subscribing");
-    }
-  };
-
   return (
-    <div className="main-section-pahelapp">
-      <div className="Pahelapp">
-        <div className="pahelapp-image-container">
-          <img src={pahelapp} alt="APP image" />
+    <div className="app-live-section">
+      <div className="app-live-container">
+        
+        {/* Left Side: Dynamic App Mockup */}
+        <div className="app-visual-side">
+          <div className="blob-gradient"></div>
+          <img src={pahelapp} alt="PAHEL App Live" className="app-floating-mockup" />
         </div>
-        <div className="pahelapp-text-container">
-          <p className="font-zilla font-bold">We are Launching Soon</p>
-          <div className="input-container">
-            <input
-              placeholder="Your email address"
-              className="subscribe-input"
-              onChange={(e) => setEmail(e.target.value)}
-            />
+
+        {/* Right Side: Download Content */}
+        <div className="app-content-side">
+          <div className="live-status-badge">
+            <span className="dot-blink"></span> NOW LIVE
           </div>
-          <div>
-            <button className="subscribe-btn" onClick={handleSubscribe}>
-              Get Notified
-            </button>
-          </div>
+          
+          <h2 className="app-main-title">
+            Download the <span className="pink-gradient-text">PAHEL App</span> Today
+          </h2>
+          
+          <p className="app-description">
+            Your trusted companion for safe, women-only rides is now available. 
+            Join thousands of Sakhis and riders who are redefining mobility with safety and empowerment.
+          </p>
         </div>
-        <ToastContainer />
+
       </div>
     </div>
   );

@@ -97,7 +97,7 @@ const Header = ({ openForm }) => {
               }}
             >
               <a
-                href="#footer"
+                href="/contact"
                 className="redirects"
                 onClick={() => {
                   closeMobileMenu();

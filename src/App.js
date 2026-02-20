@@ -19,6 +19,7 @@ import Shipping from "./pages/Shipping/Shipping";
 import Pricing from "./pages/Pricing/Pricing";
 import PaymentSuccess from "./components/PaymentSuccess/PaymentSuccess";
 import ScheduleRide from "./pages/ScheduleRide/ScheduleRide";
+import Contact from "./pages/Contact/Contact"; 
 
 const libraries = ["places"]; 
 
@@ -48,6 +49,7 @@ function App() {
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/schedule-ride" element={<ScheduleRide />} />
+          <Route path="/contact" element={<Contact />} />  
         </Routes>
 
         <Footer />
