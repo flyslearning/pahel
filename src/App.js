@@ -20,6 +20,8 @@ import Pricing from "./pages/Pricing/Pricing";
 import PaymentSuccess from "./components/PaymentSuccess/PaymentSuccess";
 import ScheduleRide from "./pages/ScheduleRide/ScheduleRide";
 import Contact from "./pages/Contact/Contact"; 
+import BecomeSakhi from "./pages/BecomeSakhi/BecomeSakhi"; 
+import Safety from "./pages/Safety/Safety"; 
 
 const libraries = ["places"]; 
 
@@ -47,8 +49,10 @@ function App() {
             element={<CancellationPolicy />}
           />
           <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route path="/sakhi" element={<BecomeSakhi />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/schedule-ride" element={<ScheduleRide />} />
+          <Route path="/safety" element={<Safety />} />
           <Route path="/contact" element={<Contact />} />  
         </Routes>
 

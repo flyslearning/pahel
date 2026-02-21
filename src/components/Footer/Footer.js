@@ -59,13 +59,13 @@ const Footer = () => {
                 </a>
               </p>
               <p className="footer-points">
-                <a href="/#featured" className="footer-hyperlink-text-block">
-                  Features
+                <a href="/contact" className="footer-hyperlink-text-block">
+                  Contact Us
                 </a>
               </p>
               <p className="footer-points">
-                <a href="/#working" className="footer-hyperlink-text-block">
-                  Working
+                <a href="/schedule-ride" className="footer-hyperlink-text-block">
+                  Schedule Ride
                 </a>
               </p>
               <p className="footer-points">
@@ -74,8 +74,8 @@ const Footer = () => {
                 </Link>
               </p>
               <p className="footer-points">
-                <Link to="/resources" className="footer-hyperlink-text-block">
-                  Resources
+                <Link to="/safety" className="footer-hyperlink-text-block">
+                  Safety
                 </Link>
               </p>
             </div>
@@ -97,8 +97,8 @@ const Footer = () => {
                 </Link>
               </p>
               <p className="footer-points">
-                <Link to="/shipping" className="footer-hyperlink-text-block">
-                  Shipping Policy
+                <Link to="/sakhi" className="footer-hyperlink-text-block">
+                  Become Sakhi
                 </Link>
               </p>
               {/* <p className="footer-points">

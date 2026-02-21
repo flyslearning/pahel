@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { 
   MapPin, Calendar, Clock, Car, Phone, User, 
-  ChevronRight, CheckCircle, Shield, Star, Crown, Smartphone 
+  ChevronRight, CheckCircle, Smartphone, 
+  Bike, Truck
 } from "lucide-react";
 import "./ScheduleRide.css";
 // import pinkline from "../../assets/images/rectangle-bg.png"; // Uncomment this when using locally
@@ -39,10 +40,9 @@ const ScheduleRide = () => {
   };
 
   const vehicleOptions = [
-    { id: "Standard", label: "Standard", icon: <Car size={22} />, desc: "Reliable Sedan" },
-    { id: "Business", label: "Business", icon: <Shield size={22} />, desc: "Premium SUV" },
-    { id: "Luxury", label: "Luxury", icon: <Crown size={22} />, desc: "First Class" },
-    { id: "Women", label: "Pink Ride", icon: <Star size={22} />, desc: "Female Driven" },
+{ id: "TwoWheeler", label: "2 Wheeler", icon: <Bike size={22} />, desc: "Motorcycle / Scooter" },
+{ id: "ThreeWheeler", label: "3 Wheeler", icon: <Truck size={22} />, desc: "Auto / Rikshaw" },
+{ id: "FourWheeler", label: "4 Wheeler", icon: <Car size={22} />, desc: "Car / SUV" },
   ];
 
   return (

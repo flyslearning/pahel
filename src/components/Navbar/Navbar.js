@@ -46,20 +46,17 @@ const Header = ({ openForm }) => {
                 closeMobileMenu();
               }}
             >
-              <a href="/#featured" className="redirects">
-                Features
-              </a>
+              <NavLink
+                to="/sakhi"
+                exact
+                activeClassName="active-link"
+                className="redirects"
+              >
+                Become Sakhi
+              </NavLink>
             </li>
-            <li
-              className="option"
-              onClick={() => {
-                closeMobileMenu();
-              }}
-            >
-              <a href="/#working" className="redirects">
-                Working
-              </a>
-            </li>
+          
+    
             <li
               className="option"
               onClick={() => {
@@ -90,22 +87,22 @@ const Header = ({ openForm }) => {
                 Resources
               </NavLink>
             </li>
-            <li
+             <li
               className="option"
               onClick={() => {
                 closeMobileMenu();
               }}
             >
-              <a
-                href="/contact"
+              <NavLink
+                to="/contact"
+                exact
+                activeClassName="active-link"
                 className="redirects"
-                onClick={() => {
-                  closeMobileMenu();
-                }}
               >
                 Contact
-              </a>
+              </NavLink>
             </li>
+            
           <li className="option mobile-menu" onClick={closeMobileMenu}>
             <Link to="/schedule-ride" className="redirects">
               <RoundBtn

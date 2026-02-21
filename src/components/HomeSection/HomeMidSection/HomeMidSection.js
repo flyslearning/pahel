@@ -169,21 +169,43 @@ const HomeMidSection = () => {
             {showPrice && (
               <div className="price-results-overlay">
                 <div className="price-cards-grid">
+
                   <div className="price-item">
-                    <span className="vehicle-icon">🛵</span>
-                    <span className="vehicle-name">2 Wheeler</span>
+                    <span className="vehicle-icon">🏍️</span>
+                    <span className="vehicle-name">Bike / Scooty</span>
                     <span className="vehicle-price">₹40 - ₹60</span>
                   </div>
+
                   <div className="price-item">
                     <span className="vehicle-icon">🛺</span>
-                    <span className="vehicle-name">3 Wheeler</span>
-                    <span className="vehicle-price">₹80 - ₹120</span>
+                    <span className="vehicle-name">Auto</span>
+                    <span className="vehicle-price">₹70 - ₹100</span>
                   </div>
+
+                  <div className="price-item">
+                    <span className="vehicle-icon">🛵</span>
+                    <span className="vehicle-name">E Rickshaw</span>
+                    <span className="vehicle-price">₹60 - ₹90</span>
+                  </div>
+
+                  <div className="price-item">
+                    <span className="vehicle-icon">🚙</span>
+                    <span className="vehicle-name">Mini</span>
+                    <span className="vehicle-price">₹120 - ₹180</span>
+                  </div>
+
                   <div className="price-item">
                     <span className="vehicle-icon">🚗</span>
-                    <span className="vehicle-name">4 Wheeler</span>
+                    <span className="vehicle-name">Sedan</span>
                     <span className="vehicle-price">₹150 - ₹250</span>
                   </div>
+
+                  <div className="price-item">
+                    <span className="vehicle-icon">🚘</span>
+                    <span className="vehicle-name">SUV</span>
+                    <span className="vehicle-price">₹200 - ₹350</span>
+                  </div>
+
                 </div>
               </div>
             )}

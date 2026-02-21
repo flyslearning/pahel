@@ -1,0 +1,250 @@
+:root {
+  --sakhi-pink: #e91e63;
+  --sakhi-black: #1a1a1a;
+  --bg-light: #fafafa;
+  --nav-desktop: 140px;
+  --nav-mobile: 100px;
+}
+
+.Safety-Wrapper {
+  width: 100%;
+  background: white;
+  padding-top: var(--nav-desktop); /* Navbar fix for laptop */
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+.safety-main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Section */
+.safety-hero-section {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.safety-badge {
+  display: inline-block;
+  background: var(--sakhi-pink);
+  color: white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+}
+
+.title-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.header-pink-line {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.safety-h1 {
+  font-family: "Zilla Slab", serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  color: var(--sakhi-black);
+  margin: 0;
+}
+
+.safety-tagline {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  color: var(--sakhi-pink);
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.safety-intro-box {
+  max-width: 850px;
+  margin: 3.5rem auto 0;
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  border: 1px solid #f0f0f0;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.pink-accent-text {
+  color: var(--sakhi-pink);
+  font-weight: 700;
+}
+
+/* Protocol Rows */
+.safety-protocol-section {
+  padding: 5rem 0;
+  background: var(--bg-light);
+}
+
+.protocol-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+
+.protocol-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+.row-rev { flex-direction: row-reverse; }
+
+.protocol-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.icon-sphere {
+  width: 160px;
+  height: 160px;
+  background: white;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+  transform: rotate(-5deg);
+}
+
+.protocol-icon { font-size: 4.5rem; z-index: 2; }
+
+.protocol-number {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 4rem;
+  font-weight: 900;
+  color: #eee;
+  z-index: 1;
+}
+
+.protocol-text { flex: 1.2; }
+
+.protocol-title {
+  font-family: "Zilla Slab", serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: var(--sakhi-black);
+  margin-bottom: 1rem;
+}
+
+.protocol-desc {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.protocol-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.feature-pill {
+  background: rgba(233, 30, 99, 0.08);
+  color: var(--sakhi-pink);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid rgba(233, 30, 99, 0.1);
+}
+
+/* Commitment Section */
+.safety-footer-commitment {
+  padding: 6rem 1.5rem;
+}
+
+.commitment-inner-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--sakhi-black);
+  color: white;
+  padding: 5rem 2rem;
+  border-radius: 40px;
+  text-align: center;
+}
+
+.footer-h2 {
+  font-family: "Zilla Slab", serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  margin-bottom: 1rem;
+}
+
+.footer-lead {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-bottom: 3.5rem;
+}
+
+.commitment-pill-grid {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.safety-pill {
+  padding: 12px 25px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 100px;
+  background: rgba(255,255,255,0.05);
+}
+
+.safety-pill strong { color: #ff85af; }
+
+/* --- Mobile Responsiveness & Navbar Fix --- */
+@media (max-width: 1024px) {
+  .protocol-card { gap: 3rem; }
+}
+
+@media (max-width: 768px) {
+  .Safety-Wrapper {
+    padding-top: var(--nav-mobile); /* Mobile Navbar Safe Space */
+  }
+
+  .safety-hero-section { margin-bottom: 4rem; }
+
+  .protocol-card, .row-rev {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 2rem;
+    margin-bottom: 6rem;
+  }
+
+  .icon-sphere { width: 130px; height: 130px; transform: rotate(0); }
+  .protocol-icon { font-size: 3.5rem; }
+
+  .safety-intro-box { padding: 1.5rem; border-radius: 20px; }
+  
+  .protocol-features { justify-content: center; }
+
+  .commitment-inner-card { padding: 3rem 1.5rem; border-radius: 25px; }
+}
+
+@media (max-width: 480px) {
+  .Safety-Wrapper { padding-top: 90px; }
+  .safety-h1 { font-size: 2.2rem; padding-top: 20px;}
+  .protocol-title { font-size: 1.6rem; }
+  
+}
