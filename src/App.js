@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { LoadScript } from "@react-google-maps/api";
 
 import Navbar from "./components/Navbar/Navbar";
 import NotificationBanner from "./components/NotificationBanner/NotificationBanner";
 import Footer from "./components/Footer/Footer";
+import Popup from "./components/Popup/Popup";
 
 import Home from "./pages/Home/Home";
 import Resources from "./pages/Resources/Resources";
@@ -22,16 +23,33 @@ import ScheduleRide from "./pages/ScheduleRide/ScheduleRide";
 import Contact from "./pages/Contact/Contact"; 
 import BecomeSakhi from "./pages/BecomeSakhi/BecomeSakhi"; 
 import Safety from "./pages/Safety/Safety"; 
+import Gallery from "./pages/Gallery/Gallery"; 
 
 const libraries = ["places"]; 
 
 function App() {
+  const [showPopup, setShowPopup] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    // Show popup ONLY when homepage is refreshed
+    if (location.pathname === "/") {
+      setShowPopup(true);
+    } else {
+      setShowPopup(false);
+    }
+  }, [location]);
+
   return (
     <LoadScript
       googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
       libraries={libraries}
     >
       <div className="App">
+
+        {/* Popup */}
+        {showPopup && <Popup onClose={() => setShowPopup(false)} />}
+
         <NotificationBanner />
         <Navbar />
 
@@ -50,6 +68,7 @@ function App() {
           />
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/sakhi" element={<BecomeSakhi />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/schedule-ride" element={<ScheduleRide />} />
           <Route path="/safety" element={<Safety />} />

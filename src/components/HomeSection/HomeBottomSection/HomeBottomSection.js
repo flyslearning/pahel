@@ -3,8 +3,8 @@ import "./HomeBottomSection.css";
 
 // Assets
 import pinkLine from "../../../assets/images/rectangle-bg.png";
-import improvedsafe from "../../../assets/images/improvedsafe.png";
-import employement from "../../../assets/images/employment.png";
+import improvedsafe from "../../../assets/images/safety11.png";
+import employement from "../../../assets/images/employement.gif";
 import encourage from "../../../assets/images/encourage.png";
 import disrupt from "../../../assets/images/disrupt.png";
 import gendergap from "../../../assets/images/gendergap.png";

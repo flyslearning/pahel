@@ -1,0 +1,177 @@
+:root {
+  --primary-pink: #be185d;
+  --dark-pink: #9d174d;
+  --light-pink: #fdf2f8;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --glass: rgba(255, 255, 255, 0.95);
+}
+
+/* Overlay with blur */
+.pahel-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  padding: 20px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Main Card */
+.pahel-card {
+  background: var(--glass);
+  width: 95%;
+  max-width: 480px; /* Width thodi badha di hai laptop ke liye */
+  border-radius: 28px;
+  padding: 25px 30px; /* Vertical padding 20% kam kar di */
+  position: relative;
+  text-align: center;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+/* Close button style */
+.close-circle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  border: none;
+  font-size: 18px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Header Styles */
+.brand-badge-premium {
+  background: var(--light-pink);
+  color: var(--primary-pink);
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  display: inline-block;
+  margin-bottom: 8px; /* Margin kam ki */
+}
+
+.pahel-title {
+  color: var(--text-main);
+  font-size: 1.6rem; /* Size optimized for laptop */
+  font-weight: 800;
+  margin: 0;
+}
+
+.tagline-styled {
+  color: var(--primary-pink);
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-top: 2px;
+}
+
+/* Content */
+.mission-description {
+  color: var(--text-muted);
+  line-height: 1.4; /* Line height tight ki */
+  font-size: 0.95rem;
+  margin: 12px 0; /* Vertical spacing kam ki */
+}
+
+/* Features Container - Laptop par side-by-side height kam karne ke liye */
+.feature-container {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px; /* Space kam ki */
+}
+
+.glass-feature {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f9fafb;
+  padding: 10px;
+  border-radius: 16px;
+  text-align: left;
+  border: 1px solid #f3f4f6;
+}
+
+.icon-wrapper {
+  font-size: 1.4rem;
+}
+
+.feature-text strong {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-main);
+}
+
+.feature-text span {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* Animated Button */
+.cta-button-shimmer {
+  width: 100%;
+  background: var(--primary-pink);
+  color: white;
+  padding: 14px; /* Padding kam karke height 20% reduce ki */
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(190, 24, 93, 0.3);
+}
+
+.footer-subtext {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 15px; /* Margin kam ki */
+}
+
+/* --- Laptop specific overall Box height management --- */
+@media (min-width: 1024px) {
+  .pahel-card {
+    padding: 20px 30px; /* Aur bhi sleek height laptop par */
+  }
+  .feature-container {
+    gap: 15px; /* Width utilization */
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+  .pahel-card {
+    max-width: 90%;
+    padding: 30px 20px;
+  }
+  .feature-container {
+    flex-direction: column; /* Phone par scroll allow karne ke liye vertical back to original */
+    gap: 8px;
+  }
+  .pahel-title {
+    font-size: 1.4rem;
+  }
+}
+
+/* Animations (Wahi purani professional wali) */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(20px) scale(0.98); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}

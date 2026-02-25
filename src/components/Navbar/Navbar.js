@@ -102,6 +102,21 @@ const Header = ({ openForm }) => {
                 Contact
               </NavLink>
             </li>
+            <li
+              className="option"
+              onClick={() => {
+                closeMobileMenu();
+              }}
+            >
+              <NavLink
+                to="/gallery"
+                exact
+                activeClassName="active-link"
+                className="redirects"
+              >
+                Gallery
+              </NavLink>
+            </li>
             
           <li className="option mobile-menu" onClick={closeMobileMenu}>
             <Link to="/schedule-ride" className="redirects">
