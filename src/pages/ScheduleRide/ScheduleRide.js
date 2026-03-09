@@ -4,8 +4,8 @@ import {
   ChevronRight, CheckCircle, Smartphone, 
   Bike, Truck
 } from "lucide-react";
+import { supabase } from "../../supabase/supabaseClient";
 import "./ScheduleRide.css";
-// import pinkline from "../../assets/images/rectangle-bg.png"; // Uncomment this when using locally
 
 const ScheduleRide = () => {
   const [formData, setFormData] = useState({
@@ -16,7 +16,7 @@ const ScheduleRide = () => {
     altPhone: "",
     date: "", 
     time: "", 
-    vehicleType: "Standard",
+    vehicleType: "FourWheeler",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -30,25 +30,53 @@ const ScheduleRide = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+
+    try {
+      // 1. Time Format Fix: HH:mm ko HH:mm:ss mein convert karein
+      let formattedTime = formData.time;
+      if (formattedTime && formattedTime.split(":").length === 2) {
+        formattedTime = `${formattedTime}:00`;
+      }
+
+      // 2. Supabase Insert Logic
+      const { error } = await supabase
+        .from('rides')
+        .insert([
+          { 
+            passenger_name: formData.name, 
+            phone_number: formData.phone,
+            alt_phone: formData.altPhone || null, // Empty string ko null karein
+            pickup_location: formData.pickup,
+            drop_location: formData.drop,
+            ride_date: formData.date,
+            ride_time: formattedTime,
+            vehicle_class: formData.vehicleType
+          }
+        ]);
+
+      if (error) throw error;
+
       setIsSuccess(true);
-    }, 2000);
+    } catch (error) {
+      console.error("Booking Error:", error.message);
+      alert("Booking failed: " + error.message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const vehicleOptions = [
-{ id: "TwoWheeler", label: "2 Wheeler", icon: <Bike size={22} />, desc: "Motorcycle / Scooter" },
-{ id: "ThreeWheeler", label: "3 Wheeler", icon: <Truck size={22} />, desc: "Auto / Rikshaw" },
-{ id: "FourWheeler", label: "4 Wheeler", icon: <Car size={22} />, desc: "Car / SUV" },
+    { id: "TwoWheeler", label: "2 Wheeler", icon: <Bike size={22} />, desc: "Motorcycle / Scooter" },
+    { id: "ThreeWheeler", label: "3 Wheeler", icon: <Truck size={22} />, desc: "Auto / Rikshaw" },
+    { id: "FourWheeler", label: "4 Wheeler", icon: <Car size={22} />, desc: "Car / SUV" },
   ];
 
   return (
     <div className="ScheduleRide">
       <div className="ride-header-wrapper">
-        {/* <img src={pinkline} className="ride-pinkline" alt="Design Element" /> */}
         <h2 className="ride-main-header">Schedule Ride</h2>
         <p className="ride-tagline">Premium Mobility Solutions for Your Journey</p>
       </div>
@@ -75,13 +103,23 @@ const ScheduleRide = () => {
             <div className="success-state">
               <div className="success-icon-bg"><CheckCircle size={50} /></div>
               <h2>Booking Confirmed!</h2>
-              <p>Thank you for choosing Ride. Confirmation sent to your contact.</p>
-              <button onClick={() => setIsSuccess(false)} className="rebook-btn">Schedule Another Trip</button>
+              <p>Thank you for choosing PAHEL. Confirmation sent to {formData.phone}.</p>
+              <button 
+                onClick={() => {
+                  setIsSuccess(false);
+                  setFormData({
+                    name: "", pickup: "", drop: "", phone: "",
+                    altPhone: "", date: "", time: "", vehicleType: "FourWheeler"
+                  });
+                }} 
+                className="rebook-btn"
+              >
+                Schedule Another Trip
+              </button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="booking-form-element">
-
-
+              
               <div className="form-step-header">
                 <span className="step-num">01</span>
                 <h4>Passenger Details</h4>
@@ -90,39 +128,42 @@ const ScheduleRide = () => {
               <div className="form-grid">
                 <div className="input-field full-width">
                   <User className="field-icon" size={18} />
-                  <input type="text" name="name" placeholder="Full Name" onChange={handleChange} required />
+                  <input type="text" name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} required />
                 </div>
                 <div className="input-field">
                   <Phone className="field-icon" size={18} />
-                  <input type="tel" name="phone" placeholder="Mobile Number" onChange={handleChange} required />
+                  <input type="tel" name="phone" placeholder="Mobile Number" value={formData.phone} onChange={handleChange} required />
                 </div>
                 <div className="input-field">
                   <Smartphone className="field-icon" size={18} />
-                  <input type="tel" name="altPhone" placeholder="Alternate Mobile" onChange={handleChange} />
+                  <input type="tel" name="altPhone" placeholder="Alternate Mobile" value={formData.altPhone} onChange={handleChange} />
                 </div>
               </div>
+
               <div className="form-step-header">
                 <span className="step-num">02</span>
                 <h4>Trip Destinations</h4>
               </div>
-                            <div className="form-grid">
+              
+              <div className="form-grid">
                 <div className="input-field full-width">
                   <MapPin className="field-icon" size={18} />
-                  <input type="text" name="pickup" placeholder="Pickup Address" onChange={handleChange} required />
+                  <input type="text" name="pickup" placeholder="Pickup Address" value={formData.pickup} onChange={handleChange} required />
                 </div>
                 <div className="input-field full-width">
                   <MapPin className="field-icon" size={18} />
-                  <input type="text" name="drop" placeholder="Drop-off Destination" onChange={handleChange} required />
+                  <input type="text" name="drop" placeholder="Drop-off Destination" value={formData.drop} onChange={handleChange} required />
                 </div>
                 <div className="input-field">
                   <Calendar className="field-icon" size={18} />
-                  <input type="date" name="date" onChange={handleChange} required />
+                  <input type="date" name="date" value={formData.date} onChange={handleChange} required />
                 </div>
                 <div className="input-field">
                   <Clock className="field-icon" size={18} />
-                  <input type="time" name="time" onChange={handleChange} required />
+                  <input type="time" name="time" value={formData.time} onChange={handleChange} required />
                 </div>
               </div>
+
               <div className="form-step-header">
                 <span className="step-num">03</span>
                 <h4>Select Vehicle Class</h4>
@@ -145,7 +186,7 @@ const ScheduleRide = () => {
               </div>
 
               <button type="submit" className="booking-cta-btn" disabled={isSubmitting}>
-                {isSubmitting ? "Booking..." : "Schedule Your Ride"}
+                {isSubmitting ? "Processing..." : "Schedule Your Ride"}
                 <ChevronRight size={20} />
               </button>
             </form>
