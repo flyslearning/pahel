@@ -8,7 +8,7 @@ const BecomeSakhi = () => {
   }, []);
 
   // Google Form ki link yahan update karein
-  const googleFormUrl = "https://forms.google.com/your-form-link-here";
+  const googleFormUrl = "https://forms.gle/cLHLphNt8dZj2oug8";
 
   return (
     <div className="Sakhi-Main">

@@ -5,46 +5,124 @@ import pinkline from "../../assets/images/rectangle-bg.png";
 const AboutUs = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("reveal-visible");
+        }
+      });
+    }, { threshold: 0.15 });
+
+    const animatedElements = document.querySelectorAll(".reveal");
+    animatedElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <div className="AboutUs-Main">
-      {/* Intro Section */}
-      <section className="about-intro">
-        <div className="about-header">
-          <img src={pinkline} className="about-pinkline" alt="decor" />
-          <h2 className="about-title">About Us</h2>
+    <div className="AboutUs-Wrapper">
+      {/* Background Decor */}
+      <div className="bg-glow"></div>
+
+      {/* Hero Section */}
+      <section className="about-hero reveal">
+        <div className="hero-header">
+          <img src={pinkline} className="brand-accent" alt="" />
+          <h1 className="hero-title">Our Story</h1>
+          <p className="hero-tag">A Movement for Women, By Women</p>
         </div>
         
-        <div className="about-text-container">
-          <p className="intro-paragraph">
-            <strong>Pink A Helpdrive Express Private Limited (PAHEL)</strong> is a 
-            women-led initiative dedicated to making travel safer, easier, and 
-            more empowering for women. Built on the vision of 
-            <span className="pink-highlight"> “by women, for women,”</span> PAHEL 
-            provides reliable women-only transport services while creating 
-            opportunities for female drivers, fondly called as <strong>Sakhis</strong>.
+        <div className="glass-container reveal">
+          <p className="p-main">
+            <strong>Pink A Helpdrive Express Private Limited (PAHEL)</strong> is a women-led initiative dedicated to making travel safer, easier, and more empowering for women.
           </p>
-          <p className="intro-paragraph">
-            More than just a ride, PAHEL is a movement that blends safety with 
-            independence — giving women the confidence to step out freely and 
-            the chance to shape their own future. With professionalism at its core 
-            and compassion at its heart, PAHEL is redefining mobility as a space 
-            of trust, dignity, and empowerment.
+          <p className="p-sub">
+            Built on the idea <span className="pink-text">“Of Women, By Women, For Women,”</span> PAHEL provides reliable transport while creating opportunities for female drivers, fondly called <strong>Sakhis</strong>.
           </p>
         </div>
       </section>
 
-      {/* USP & Slogan Section */}
-      <section className="about-usp">
-        <div className="usp-card">
-          <p className="usp-quotes">
-            “Women at the wheel.<br />
-            Women in the lead.<br />
-            Women at the heart — that’s PAHEL.”
+      {/* The Journey Section */}
+      <section className="journey-grid reveal">
+        <div className="journey-card reveal">
+          <h2 className="section-h">The Seed of Change</h2>
+          <p>
+            The story of PAHEL began in our college days. Like so many young women, 
+            late-night travel was often met with a "no" from parents—not out of lack of trust in us, 
+            but fear of the world outside.
           </p>
-          <div className="usp-divider"></div>
-          <h2 className="usp-slogan">Of Women, For Women, By Women</h2>
+          <p>
+            One thought became the seed of PAHEL: <strong>What if the driver was also a woman?</strong> 
+            A ride driven by a woman would not only feel safer but also more comforting.
+          </p>
+        </div>
+      </section>
+
+      {/* How It Works - Visual Steps */}
+      <section className="steps-section reveal">
+        <h2 className="section-h center">How it works?</h2>
+        <div className="steps-container">
+          <div className="step-box reveal">
+            <span className="step-id">01</span>
+            <h4>Book</h4>
+            <p>Request a ride via the PAHEL app.</p>
+          </div>
+          <div className="step-box reveal">
+            <span className="step-id">02</span>
+            <h4>Ride</h4>
+            <p>A trained Sakhi picks you up.</p>
+          </div>
+          <div className="step-box reveal">
+            <span className="step-id">03</span>
+            <h4>Arrive</h4>
+            <p>Travel with confidence and dignity.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Vision - Modern Split */}
+      <section className="mv-section reveal">
+        <div className="mv-card mission">
+          <h3>Our Mission</h3>
+          <p>To promote women empowerment and safety by providing safe, reliable, and affordable transportation services, fostering an inclusive community.</p>
+        </div>
+        <div className="mv-card vision">
+          <h3>Our Vision</h3>
+          <p>To create a place where every woman feels safe, comfortable, and confident while traveling alone, becoming a leading example of support.</p>
+        </div>
+      </section>
+
+      {/* Core Values - Horizontal Scroll on Mobile */}
+<section className="values-section reveal" style={{ marginBottom: "60px" }}>
+   <h2 className="section-h center">Core Values</h2>
+   <div className="values-flex">
+      {["Safety First", "Empowerment", "Trust", "Inclusivity", "Compassion"].map((val, i) => (
+        <div key={i} className="value-chip">{val}</div>
+      ))}
+   </div>
+</section>
+
+      {/* Why Nation Section */}
+      <section className="nation-section reveal">
+        <div className="glass-card">
+          <h2 className="section-h">Why the Nation needs PAHEL?</h2>
+          <p>
+            PAHEL empowers women drivers (Sakhis) to earn, grow, and lead. 
+            It ensures improved safety, encourages empowerment, and disrupts traditional stereotypes while reducing gender gaps.
+          </p>
+        </div>
+      </section>
+
+      {/* Final Tagline Card */}
+      <section className="final-tag reveal">
+        <div className="tag-inner">
+          <p className="usp-text">“Of Women, For Women, By Women”</p>
+          <div className="divider"></div>
+          <p className="final-desc">
+            PAHEL is more than a transport service. It’s an initiative where women lead the way, 
+            women create the change, and women own their journeys.
+          </p>
         </div>
       </section>
     </div>

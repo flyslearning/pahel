@@ -1,91 +1,96 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import "./FAQ.css";
 
-import plus from "../../../assets/images/plusicon.png";
-
 const FAQ = () => {
-  const faqData = [
-    {
-      question: " Is it safe for women to become cab drivers?",
-      answer:
-        "Yes, women can become cab drivers just like men. Safety depends on various factors such as location, company policies, and personal precautions.",
-    },
-    {
-      question: "What are the requirements to become a female cab driver?",
-      answer:
-        "Requirements vary by location and company, but generally, you will need a valid drivers license, a clean driving record, and may have to meet certain age and vehicle requirements..",
-    },
-    {
-      question: "Can women choose their working hours as cab drivers?",
-      answer:
-        "Many female cab drivers have the flexibility to choose their working hours, allowing them to balance work and personal life.",
-    },
-    {
-      question: "How can female cab drivers ensure their safety while working?",
-      answer:
-        "Female cab drivers can take safety precautions such as keeping their vehicle well-maintained, staying in well-lit areas, and having a communication device for emergencies.",
-    },
-    {
-      question: "Is there a demand for female cab drivers?",
-      answer:
-        "The demand for female cab drivers is increasing, as some passengers prefer female drivers for comfort and security reasons.",
-    },
-    {
-      question: "Are there any training programs for female cab drivers?",
-      answer:
-        "Some companies offer training programs that focus on safety, customer service, and driving skills for female drivers.",
-    },
-    {
-      question: "How can I start my career as a female cab driver?",
-      answer:
-        "To start a career as a female cab driver, you can apply to ride-sharing companies, get the necessary licenses, and meet any other requirements in your area.",
-    },
-    {
-      question: "Are there any support networks for female cab drivers?",
-      answer:
-        "Some organizations and associations provide support networks, resources, and advice for female cab drivers.",
-    },
-    {
-      question:
-        "What can female cab drivers do to ensure a comfortable experience for passengers?",
-      answer:
-        "Female cab drivers can maintain a clean and well-maintained vehicle, provide good customer service, and respect passengers preferences for a pleasant ride.",
-    },
-  ];
-
+  const [activeTab, setActiveTab] = useState("Passengers");
   const [openIndex, setOpenIndex] = useState(null);
+
+  const faqData = {
+    Passengers: [
+      { q: "Who can use PAHEL?", a: "Rides within PAHEL are exclusively for women passengers. Our goal is to create a safe and supportive travel environment." },
+      { q: "Why should I choose PAHEL for my rides?", a: "PAHEL is designed with women’s safety and comfort at its core. With verified female drivers, a women-focused environment, it offers a travel experience built on trust, respect, and reliability." },
+      { q: "How safety is ensured within PAHEL?", a: "PAHEL works with verified women drivers. They undergo a verification process where important documents and background details are reviewed before they are onboarded." },
+      { q: "What types of rides are available on PAHEL?", a: "PAHEL offers multiple ride options including: Two-wheelers (Scooty), Three-wheelers (Auto), and Four-wheelers (Car)." },
+      { q: "In which cities are PAHEL available?", a: "PAHEL is currently launching in Aligarh, Uttar Pradesh and nearby cities, with plans to expand across India." },
+      { q: "How can I book a ride with PAHEL?", a: "Download the app from Play Store, Register/Sign in, Enter locations, Select vehicle type, and Confirm." },
+      { q: "Can I share my ride details with family?", a: "Yes, you can share live ride details with family or friends for additional safety using the app." }
+    ],
+    Sakhis: [
+      { q: "Who are Sakhis?", a: "Sakhis are the women drivers in PAHEL who provide safe rides while building their own financial independence." },
+      { q: "How can I become a Sakhi?", a: "Simply click on 'Apply Now' or contact 7895409555 to get started." },
+      { q: "Who all can join PAHEL?", a: "Any female above 18 years who knows driving, including housewives and students. You get flexible schedules and a supportive community." },
+      { q: "What are the document requirements?", a: "A valid driving license, government ID proof, and vehicle RC (if applicable)." },
+      { q: "Do I need my own vehicle?", a: "No, you can join even without owning a vehicle. We provide easy access to vehicles." },
+      { q: "Does PAHEL provide training?", a: "Yes, we provide comprehensive training in driving, customer service, and self-defence." }
+    ],
+    "Pricing & Investment": [
+      { q: "How are ride fares calculated?", a: "Fares are based on distance and vehicle type without any surge pricing." },
+      { q: "What makes PAHEL different?", a: "PAHEL focuses on both safety and empowerment by connecting women passengers with female drivers." },
+      { q: "How can I collaborate or invest?", a: "Reach out to us at admin@pinkpahel.in for opportunities." },
+      { q: "Is PAHEL only about rides?", a: "No, it is an initiative aimed at safer mobility and creating growth opportunities for women." }
+    ]
+  };
 
   const handleToggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <div className="faq-main-section">
-      <div className="faq-section">
-        <p className="faq-header">Frequently Asked Questions</p>
-        {faqData.map((faq, index) => (
-          <div key={index} className="accordion-item">
-            <div
-              className={`accordion-question ${
-                openIndex === index ? "open" : ""
-              }`}
-              onClick={() => handleToggle(index)}
+    <div className="faq-container">
+      <div className="faq-glass-card">
+        <header className="faq-header">
+          <span className="sub-tag">Have Questions?</span>
+          <h1>Frequently Asked Questions</h1>
+          <div className="header-line"></div>
+        </header>
+
+        {/* Tab Navigation */}
+        <div className="tab-navigation">
+          {Object.keys(faqData).map((tab) => (
+            <button
+              key={tab}
+              className={`tab-btn ${activeTab === tab ? "active" : ""}`}
+              onClick={() => { setActiveTab(tab); setOpenIndex(null); }}
             >
-              <span>{faq.question}</span>
-              <span className="accordian-icon">
-                {openIndex === index ? "-" : "+"}
-              </span>
-            </div>
-            {openIndex === index && (
-              <div
-                className="accordion-answer"
-                style={{ backgroundColor: faq.answerColor }}
-              >
-                {faq.answer}
-              </div>
-            )}
-          </div>
-        ))}
+              {tab}
+            </button>
+          ))}
+        </div>
+
+        {/* Accordion Section */}
+        <div className="accordion-wrapper">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3 }}
+            >
+              {faqData[activeTab].map((item, index) => (
+                <div key={index} className={`faq-item ${openIndex === index ? "active" : ""}`}>
+                  <div className="faq-question" onClick={() => handleToggle(index)}>
+                    <span>{item.q}</span>
+                    <span className="faq-icon">{openIndex === index ? "−" : "+"}</span>
+                  </div>
+                  <AnimatePresence>
+                    {openIndex === index && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="faq-answer"
+                      >
+                        <p>{item.a}</p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+        </div>
       </div>
     </div>
   );

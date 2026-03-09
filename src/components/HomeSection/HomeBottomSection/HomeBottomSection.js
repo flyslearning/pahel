@@ -60,8 +60,7 @@ const HomeBottomSection = () => {
             Why Nation needs <span className="highlight-pink">PAHEL?</span>
           </h2>
           <p className="subtitle-lead">
-            Redefining safety and mobility through a female-centric ecosystem. 
-            We provide more than just a ride; we provide peace of mind.
+            A transportation service consisting of women drivers exclusively catering to women passengers can be a game-changer in today's society, because every woman deserves safe mobility and the freedom to move without fear. PAHEL not only provides secure rides but also empowers women drivers we proudly call as Sakhis to earn, grow, and lead ensuring improved safety, creating employment opportunities, encouraging women empowerment, disrupt traditional stereotypes and reducing gender gaps.
           </p>
         </div>
 

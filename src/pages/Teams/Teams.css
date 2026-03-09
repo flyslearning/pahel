@@ -1,113 +1,206 @@
-.Teams {
-  width: 1250px;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center;
-  padding: 10rem 15px 3rem 15px;
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+.teams-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding-top: 40px; 
+  padding-bottom: 80px;
+  overflow-x: hidden;
 }
 
-.teams-header {
-  align-self: center;
+/* Header Section */
+.teams-header-section {
+  padding: 80px 20px 60px;
   text-align: center;
+  position: relative;
 }
 
-.teams-pinkline {
-  width: 26%;
+.header-decoration {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 180px; /* Reduced from 250px */
+  opacity: 0.1;
+  z-index: 1;
+  pointer-events: none;
 }
 
-.founder-header {
-  font-size: 2.8rem;
+.main-title {
   font-family: "Zilla Slab", serif;
-  font-weight: bold;
+  font-size: clamp(2rem, 4vw, 2.8rem); /* Reduced size for elegance */
+  color: #d64a6b; /* Slightly deeper professional pink */
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  font-weight: 700;
 }
 
-.carousel-section {
+.title-underline {
+  width: 50px; /* Smaller underline */
+  height: 4px;
+  background: #e55a7b;
+  margin: 12px auto 0;
+  border-radius: 10px;
+}
+
+/* Container */
+.team-container {
+  max-width: 1100px; /* Narrower container for better readability */
+  margin: 0 auto;
+  padding: 0 40px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 100px; /* Balanced spacing */
+}
+
+/* Card Layout */
+.member-card {
+  display: flex;
   align-items: center;
+  gap: 80px; /* Clear breathing room */
 }
 
-@media (max-width: 1440px) {
-  .Teams {
-    width: auto;
-}
+.member-card.reverse-layout {
+  flex-direction: row-reverse;
 }
 
-@media (min-width: 991px) and (max-width: 1199px) {
-  .Teams {
-    width: auto;
-}
-}
-
-@media (min-width: 767px) and (max-width: 991px) {
-  .Teams {
-    width: auto;
-}
+/* Image Section */
+.image-section {
+  flex: 0 0 340px; /* Fixed professional width for desktop */
 }
 
-/* Mobile devices (480px - 767px) */
-@media (min-width: 479px) and (max-width: 767px) {
-  html {
-    font-size: 18px;
+.image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.founder-photo {
+  width: 100%;
+  height: 400px; /* Uniform height for professional look */
+  object-fit: cover;
+  border-radius: 20px;
+  z-index: 2;
+  position: relative;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.member-card:hover .founder-photo {
+  transform: translateY(-5px);
+}
+
+.photo-accent {
+  position: absolute;
+  top: 15px;
+  right: -15px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #fceef1;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+/* Info Section */
+.info-section {
+  flex: 1;
+}
+
+.info-badge {
+  display: inline-block;
+  background: #fff0f3;
+  color: #e55a7b;
+  padding: 4px 12px;
+  border-radius: 4px; /* Squarer professional corners */
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.info-name {
+  font-family: "Zilla Slab", serif;
+  font-size: 2.2rem; /* Reduced from 2.8rem */
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+}
+
+.info-role {
+  font-family: 'Inter', sans-serif;
+  color: #e55a7b;
+  font-size: 1.1rem; /* Reduced from 1.4rem */
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.info-bio {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem; /* Standard readable size */
+  line-height: 1.7;
+  color: #4a4a4a;
+  text-align: left; /* Left align is generally more professional than justify */
+}
+
+.info-footer-line {
+  width: 40px;
+  height: 2px;
+  background: #e55a7b;
+  margin-top: 25px;
+  opacity: 0.3;
+}
+
+/* --- RESPONSIVE QUERIES --- */
+
+@media (max-width: 1024px) {
+  .member-card {
+    gap: 40px;
+  }
+  .image-section {
+    flex: 0 0 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .teams-header-section {
+    padding: 60px 20px 40px;
   }
 
-  .Teams {
-    width: auto;
-    padding: 8rem 15px 5rem 15px;
+  .team-container {
+    gap: 70px;
+    padding: 0 24px;
   }
 
-  .teams-pinkline {
-    margin-bottom: 1rem;
-    width: 38vw;
-}
-
-  .teams-header {
-    align-self: center;
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-  .founder-header {
-    font-size: 2.2rem;
-    font-family: "Zilla Slab", serif;
-    font-weight: bold;
-}
-
-  .carousel-section {
-    display: flex;
+  .member-card, .member-card.reverse-layout {
     flex-direction: column;
-    align-items: center;
-}
-
-}
-
-/* Small mobile devices (up to 479px) */
-@media (max-width: 479px) {
-  .Teams {
-    width: auto;
-    padding: 10rem 15px 5rem 15px;
+    text-align: center;
   }
 
-  .teams-pinkline {
-    margin-bottom: 1rem;
-    width: 50%;
-}
+  .image-section {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 300px;
+  }
 
-  .teams-header {
-    align-self: center;
+  .founder-photo {
+    height: 350px;
+  }
+
+  .info-bio {
     text-align: center;
-    margin-bottom: 2rem;
+  }
+
+  .info-footer-line {
+    margin: 20px auto 0;
+  }
 }
 
-  .founder-header {
-    font-size: 2.2rem;
-    font-family: "Zilla Slab", serif;
-    font-weight: bold;
-}
-
-  .carousel-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 1.8rem;
+  }
+  .info-name {
+    font-size: 1.6rem;
+  }
 }

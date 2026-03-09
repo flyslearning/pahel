@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.css";
 import { Link } from "react-router-dom";
 
-import pahellogo from "../../assets/images/pahellogo.png";
+import logo from "../../assets/images/logo.png";
 
 import {
   FaLinkedin,
@@ -20,7 +20,7 @@ const Footer = () => {
             <div className="first-footer-block">
               <div>
                 <Link to="/" className="redirects">
-                  <img src={pahellogo} className="footer-pahel-logo" />
+                  <img src={logo} className="footer-pahel-logo" />
                 </Link>
                 <p>
                   Of Women, For Women, By Women
@@ -30,7 +30,7 @@ const Footer = () => {
                 <div>
                   {/* LinkedIn Icon */}
                   <div className="media-icon">
-                    <Link to="/">
+                    <Link to="https://www.linkedin.com/company/pink-a-helpdrive-express-pvt-ltd-pahel/">
                       <FaLinkedin size={20} color="#E55A7B" />
                     </Link>
                   </div>

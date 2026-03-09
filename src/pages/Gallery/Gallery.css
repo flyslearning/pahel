@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --primary-pink: #e55a7b;
+  --text-dark: #1a1a1a;
+  --text-gray: #555555;
+  /* Increase this if your navbar is taller */
+  --navbar-height: 80px; 
+}
+
+.gallery-page {
+  background-color: #ffffff;
+  padding-bottom: 100px;
+  overflow-x: hidden;
+  /* Navbar spacing fixed here */
+  padding-top: var(--navbar-height); 
+}
+
+/* --- Lightbox Modal --- */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.96);
+  z-index: 11000; /* Higher than navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(8px);
+  cursor: zoom-out;
+}
+
+.full-view-img {
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: 8px;
+  object-fit: contain;
+  box-shadow: 0 0 60px rgba(0,0,0,0.5);
+}
+
+.close-btn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background: white;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  z-index: 11001;
+}
+
+/* --- Header Section --- */
+.gallery-header {
+  text-align: center;
+  padding: 60px 20px 60px; /* Reduced top padding since page has navbar spacing */
+  background: linear-gradient(180deg, #fff5f7 0%, #ffffff 100%);
+}
+
+.gallery-badge {
+  color: var(--primary-pink);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.8rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.gallery-title {
+  font-family: "Zilla Slab", serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  color: var(--text-dark);
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.gallery-decor {
+  width: 100px;
+  margin: 0 auto 20px;
+}
+
+.gallery-subtitle {
+  color: var(--text-gray);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- Content & Layout --- */
+.gallery-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.event-block {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  align-items: center;
+  gap: clamp(30px, 5vw, 80px);
+  margin-bottom: clamp(60px, 10vw, 120px);
+}
+
+/* Alternate rows only on large screens */
+@media (min-width: 993px) {
+  .event-block:nth-child(even) {
+    direction: rtl;
+  }
+  .event-block:nth-child(even) .event-text {
+    direction: ltr;
+  }
+}
+
+.mini-tag {
+  color: var(--primary-pink);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.event-heading {
+  font-family: "Zilla Slab", serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: #222;
+  margin: 12px 0 20px;
+}
+
+.event-copy {
+  color: var(--text-gray);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* --- Images Fix --- */
+.event-visuals {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.img-wrapper-professional {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1; 
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #f8f8f8;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.refined-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.img-wrapper-professional:hover .refined-img {
+  transform: scale(1.08);
+}
+
+.img-overlay-hint {
+  position: absolute;
+  inset: 0;
+  background: rgba(229, 90, 123, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.view-text {
+  color: white;
+  font-weight: 600;
+  border: 2px solid white;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+}
+
+.img-wrapper-professional:hover .img-overlay-hint {
+  opacity: 1;
+}
+
+/* --- Press Section --- */
+.press-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.press-card-new {
+  aspect-ratio: 3 / 4;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  cursor: pointer;
+}
+
+.press-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Mobile Fixes --- */
+@media (max-width: 992px) {
+  .event-block {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .gallery-page {
+    padding-top: 70px; /* Small navbar for mobile */
+  }
+}
+
+@media (max-width: 550px) {
+  .event-visuals {
+    grid-template-columns: 1fr;
+  }
+  .img-wrapper-professional {
+    aspect-ratio: 16 / 10;
+  }
+  .press-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

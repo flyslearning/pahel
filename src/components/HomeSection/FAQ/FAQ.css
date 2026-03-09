@@ -1,125 +1,148 @@
-.faq-main-section {
-  width: 1250px;
-  margin: 0 auto;
-  padding: 0 15px;
+.faq-container {
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, #fff5f7 0%, #ffffff 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
 }
 
-.faq-section {
-  width: auto;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0px 0px 40px #00000014;
-  border-radius: 26px;
-  padding: 3rem 2rem;
-  margin-bottom: 3rem;
+.faq-glass-card {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border-radius: 40px;
+  padding: 3rem;
+  box-shadow: 0 25px 50px -12px rgba(229, 90, 123, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .faq-header {
-  font-size: 2rem;
   text-align: center;
-  font-family: "Zilla Slab", serif;
+  margin-bottom: 3rem;
+}
+
+.sub-tag {
   color: #e55a7b;
   font-weight: 700;
-  padding-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
 }
 
-.accordion-container {
-  width: 100%;
+.faq-header h1 {
+  font-family: "Zilla Slab", serif;
+  font-size: 2.8rem;
+  color: #333;
+  margin: 0.5rem 0;
 }
 
-.accordion-item {
-  margin-bottom: 0.9rem;
-  background: #fafafa 0% 0% no-repeat padding-box;
-  border: 1px solid #fafafa;
+.header-line {
+  width: 60px;
+  height: 4px;
+  background: #e55a7b;
+  margin: 1rem auto;
   border-radius: 10px;
 }
 
-.accordion-question {
-  background-color: #fafafa;
-  padding: 0.9rem 2rem;
+/* Tab Navigation */
+.tab-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 0.8rem 1.8rem;
+  border: 2px solid #fceef1;
+  background: white;
+  border-radius: 50px;
   cursor: pointer;
+  font-weight: 600;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+  background: #e55a7b;
+  color: white;
+  border-color: #e55a7b;
+  box-shadow: 0 10px 20px rgba(229, 90, 123, 0.2);
+}
+
+/* Accordion Items */
+.faq-item {
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.faq-item.active {
+  border-color: rgba(229, 90, 123, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+}
+
+.faq-question {
+  padding: 1.5rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 10px;
-  font-size: 0.9rem;
-  font-weight: 500;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #444;
 }
 
-.accordion-question.open {
-  background-color: #e55a7b;
-  color: #ffffff;
-  .accordian-icon {
-    color: #ffffff;
-  }
-}
-
-.accordion-answer {
-  padding: 0.9rem 2rem;
-}
-
-.accordian-icon {
+.faq-item.active .faq-question {
   color: #e55a7b;
 }
 
-/*Large Desktops */
-@media (max-width: 1400px) {
-  .faq-main-section {
-    width: auto;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-
+.faq-icon {
+  width: 30px;
+  height: 30px;
+  background: #fff5f7;
+  color: #e55a7b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
 }
 
-/* Small Laptops and Desktops */
-@media (min-width: 991px) and (max-width: 1199px) {
-  .faq-main-section {
-    width: auto;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
+.faq-item.active .faq-icon {
+  background: #e55a7b;
+  color: white;
 }
 
-/* Tablets */
-@media (min-width: 767px) and (max-width: 991px) {
-  .faq-main-section {
-    width: auto;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-
-  .accordion-question {
-    font-size: 1.2rem;
-  }
-  .accordion-answer {
-    font-size: 1.2rem;
-}
-}
-
-/* Mobile Phones */
-@media (max-width: 767px) {
-  .faq-main-section {
-    width: auto;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-
-  .faq-header {
-    font-size: 1.8rem;
-  }
-}
-
-@media (max-width: 507px){
-  .faq-section {
-    padding: 1.5rem 1rem;
-}
-.accordion-question {
-  padding: 0.6rem 1.2rem;
+.faq-answer {
+  padding: 0 2rem 1.5rem 2rem;
+  color: #666;
+  line-height: 1.6;
   font-size: 1rem;
 }
-.accordion-answer {
-  padding: 0.6rem 1.2rem;
-  font-size: 0.95rem;
-}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .faq-glass-card {
+    padding: 1.5rem;
+    border-radius: 25px;
+  }
+  .faq-header h1 {
+    font-size: 1.8rem;
+  }
+  .tab-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  .faq-question {
+    padding: 1rem 1.2rem;
+    font-size: 1rem;
+  }
 }

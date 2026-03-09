@@ -1,177 +1,164 @@
 :root {
-  --primary-pink: #be185d;
-  --dark-pink: #9d174d;
-  --light-pink: #fdf2f8;
-  --text-main: #1f2937;
-  --text-muted: #6b7280;
-  --glass: rgba(255, 255, 255, 0.95);
+  --pahel-pink: #be185d;
+  --pahel-dark: #831843;
+  --pahel-soft: #fdf2f8;
+  --text-dark: #111827;
+  --text-gray: #4b5563;
 }
 
-/* Overlay with blur */
+/* Overlay with premium blur */
 .pahel-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.7);
+  background: rgba(15, 23, 42, 0.8);
   backdrop-filter: blur(12px);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10000;
+  z-index: 99999;
   padding: 20px;
-  animation: fadeIn 0.4s ease-out;
+  animation: fadeIn 0.4s ease;
 }
 
-/* Main Card */
+/* Card Design */
 .pahel-card {
-  background: var(--glass);
-  width: 95%;
-  max-width: 480px; /* Width thodi badha di hai laptop ke liye */
-  border-radius: 28px;
-  padding: 25px 30px; /* Vertical padding 20% kam kar di */
+  background: #ffffff;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 40px;
+  padding: 40px;
   position: relative;
   text-align: center;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
-  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  overflow: hidden;
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(190, 24, 93, 0.1);
+  animation: slideIn 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* Close button style */
-.close-circle {
+/* Close Button */
+.close-btn {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: #f3f4f6;
+  top: 25px;
+  right: 25px;
+  width: 35px;
+  height: 35px;
+  background: var(--pahel-soft);
   border: none;
-  font-size: 18px;
-  color: var(--text-muted);
+  border-radius: 50%;
+  font-size: 24px;
+  color: var(--pahel-pink);
   cursor: pointer;
-  transition: all 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.3s;
 }
 
-/* Header Styles */
-.brand-badge-premium {
-  background: var(--light-pink);
-  color: var(--primary-pink);
-  padding: 4px 12px;
-  border-radius: 50px;
-  font-size: 0.7rem;
+.close-btn:hover {
+  transform: rotate(90deg);
+  background: var(--pahel-pink);
+  color: white;
+}
+
+/* Content Styling */
+.main-title {
+  font-size: 2rem;
   font-weight: 800;
+  color: var(--text-dark);
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.company-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--pahel-pink);
+  margin: 8px 0 15px 0;
+}
+
+.platform-badge {
   display: inline-block;
-  margin-bottom: 8px; /* Margin kam ki */
+  background: var(--pahel-soft);
+  color: var(--pahel-dark);
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.pahel-title {
-  color: var(--text-main);
-  font-size: 1.6rem; /* Size optimized for laptop */
-  font-weight: 800;
+/* Quote Section - The focus point */
+.quote-section {
+  margin: 35px 0;
+  padding: 25px;
+  background: linear-gradient(135deg, #fffcfd 0%, #fdf2f8 100%);
+  border-radius: 24px;
+  position: relative;
+}
+
+.vision-quote {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  font-style: italic;
+  line-height: 1.4;
   margin: 0;
 }
 
-.tagline-styled {
-  color: var(--primary-pink);
-  font-weight: 700;
-  font-size: 0.85rem;
-  margin-top: 2px;
-}
-
-/* Content */
-.mission-description {
-  color: var(--text-muted);
-  line-height: 1.4; /* Line height tight ki */
-  font-size: 0.95rem;
-  margin: 12px 0; /* Vertical spacing kam ki */
-}
-
-/* Features Container - Laptop par side-by-side height kam karne ke liye */
-.feature-container {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 20px; /* Space kam ki */
-}
-
-.glass-feature {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: #f9fafb;
-  padding: 10px;
-  border-radius: 16px;
-  text-align: left;
-  border: 1px solid #f3f4f6;
-}
-
-.icon-wrapper {
-  font-size: 1.4rem;
-}
-
-.feature-text strong {
+.quote-mark {
+  color: var(--pahel-pink);
+  font-size: 3rem;
+  opacity: 0.2;
+  font-family: serif;
   display: block;
-  font-size: 0.8rem;
-  color: var(--text-main);
+  height: 20px;
 }
 
-.feature-text span {
-  font-size: 0.7rem;
-  color: var(--text-muted);
-}
-
-/* Animated Button */
-.cta-button-shimmer {
+/* Button */
+.action-btn {
   width: 100%;
-  background: var(--primary-pink);
+  background: var(--pahel-pink);
   color: white;
-  padding: 14px; /* Padding kam karke height 20% reduce ki */
+  padding: 18px;
   border: none;
-  border-radius: 12px;
-  font-size: 1rem;
+  border-radius: 20px;
+  font-size: 1.1rem;
   font-weight: 700;
   cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 10px 15px -3px rgba(190, 24, 93, 0.3);
+  box-shadow: 0 10px 25px -5px rgba(190, 24, 93, 0.4);
+  transition: 0.3s;
 }
 
-.footer-subtext {
-  font-size: 0.75rem;
-  color: #9ca3af;
-  margin-top: 15px; /* Margin kam ki */
+.action-btn:hover {
+  transform: translateY(-3px);
+  background: var(--pahel-dark);
+  box-shadow: 0 15px 30px -5px rgba(190, 24, 93, 0.5);
 }
 
-/* --- Laptop specific overall Box height management --- */
-@media (min-width: 1024px) {
-  .pahel-card {
-    padding: 20px 30px; /* Aur bhi sleek height laptop par */
-  }
-  .feature-container {
-    gap: 15px; /* Width utilization */
-  }
+.decorative-dots {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 480px) {
-  .pahel-card {
-    max-width: 90%;
-    padding: 30px 20px;
-  }
-  .feature-container {
-    flex-direction: column; /* Phone par scroll allow karne ke liye vertical back to original */
-    gap: 8px;
-  }
-  .pahel-title {
-    font-size: 1.4rem;
-  }
+.decorative-dots span {
+  width: 6px;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 50%;
 }
 
-/* Animations (Wahi purani professional wali) */
+/* Animations */
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes slideUp {
-  0% { opacity: 0; transform: translateY(20px) scale(0.98); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(40px) scale(0.9); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .pahel-card { padding: 40px 25px; }
+  .main-title { font-size: 1.6rem; }
+  .vision-quote { font-size: 1.2rem; }
 }
