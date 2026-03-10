@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.css";
 import { Link } from "react-router-dom";
 
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/logo192.png";
 
 import {
   FaLinkedin,
@@ -33,13 +33,6 @@ const Footer = () => {
                   <div className="media-icon">
                     <Link to="https://www.linkedin.com/company/pink-a-helpdrive-express-pvt-ltd-pahel/">
                       <FaLinkedin size={20} color="#E55A7B" />
-                    </Link>
-                  </div>
-
-                  {/* Messenger Icon */}
-                  <div className="media-icon">
-                    <Link to="/">
-                      <FaFacebookMessenger size={20} color="#E55A7B" />
                     </Link>
                   </div>
 

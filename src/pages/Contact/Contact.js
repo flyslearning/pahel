@@ -29,8 +29,8 @@ const Contact = () => {
             <div className="icon-box">📞</div>
             <h3>Call Us</h3>
             <div className="details">
-              <a href="tel:+918368629913">+91 8368629913</a>
-              <a href="tel:+917895409555">+91 7895409555</a>
+              <a href="tel:+918368629913">+91 7895409555</a>
+              <a href="tel:+917895409555">+91 8279975840</a>
             </div>
           </div>
 
@@ -40,7 +40,7 @@ const Contact = () => {
             <h3>Email Us</h3>
             <div className="details">
               <a href="mailto:admin@pinkpahel.in">admin@pinkpahel.in</a>
-              <a href="mailto:pahel.pvtltd@gmail.com">pahel.pvtltd@gmail.com</a>
+              <a href="mailto:pahel.pvtltd@gmail.com">contact@pinkpahel.in</a>
             </div>
           </div>
 
