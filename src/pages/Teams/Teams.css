@@ -21,7 +21,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 180px; /* Reduced from 250px */
+  width: 180px; 
   opacity: 0.1;
   z-index: 1;
   pointer-events: none;
@@ -29,8 +29,8 @@
 
 .main-title {
   font-family: "Zilla Slab", serif;
-  font-size: clamp(2rem, 4vw, 2.8rem); /* Reduced size for elegance */
-  color: #d64a6b; /* Slightly deeper professional pink */
+  font-size: clamp(2rem, 4vw, 2.8rem); 
+  color: #d64a6b; 
   margin: 0;
   position: relative;
   z-index: 2;
@@ -38,7 +38,7 @@
 }
 
 .title-underline {
-  width: 50px; /* Smaller underline */
+  width: 50px; 
   height: 4px;
   background: #e55a7b;
   margin: 12px auto 0;
@@ -47,42 +47,47 @@
 
 /* Container */
 .team-container {
-  max-width: 1100px; /* Narrower container for better readability */
+  max-width: 1100px; 
   margin: 0 auto;
   padding: 0 40px;
   display: flex;
   flex-direction: column;
-  gap: 100px; /* Balanced spacing */
+  gap: 100px; 
 }
 
 /* Card Layout */
 .member-card {
   display: flex;
   align-items: center;
-  gap: 80px; /* Clear breathing room */
+  gap: 80px; 
 }
 
 .member-card.reverse-layout {
   flex-direction: row-reverse;
 }
 
-/* Image Section */
+/* Image Section - UPDATED TO SHOW FULL IMAGE */
 .image-section {
-  flex: 0 0 340px; /* Fixed professional width for desktop */
+  flex: 0 0 340px; 
 }
 
 .image-wrapper {
   position: relative;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .founder-photo {
   width: 100%;
-  height: 400px; /* Uniform height for professional look */
-  object-fit: cover;
+  height: auto; /* Changed from 400px to auto to maintain aspect ratio */
+  max-height: 450px; /* Limits height but shows full image */
+  object-fit: contain; /* KEY: This ensures the full image is visible without cropping */
   border-radius: 20px;
   z-index: 2;
   position: relative;
+  /* Halka background color taaki agar image transparent ho toh acchi lage */
+  background: #fff; 
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
 }
@@ -112,7 +117,7 @@
   background: #fff0f3;
   color: #e55a7b;
   padding: 4px 12px;
-  border-radius: 4px; /* Squarer professional corners */
+  border-radius: 4px; 
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 1px;
@@ -122,7 +127,7 @@
 
 .info-name {
   font-family: "Zilla Slab", serif;
-  font-size: 2.2rem; /* Reduced from 2.8rem */
+  font-size: 2.2rem; 
   color: #1a1a1a;
   margin: 0 0 8px 0;
 }
@@ -130,17 +135,17 @@
 .info-role {
   font-family: 'Inter', sans-serif;
   color: #e55a7b;
-  font-size: 1.1rem; /* Reduced from 1.4rem */
+  font-size: 1.1rem; 
   font-weight: 500;
   margin-bottom: 20px;
 }
 
 .info-bio {
   font-family: 'Inter', sans-serif;
-  font-size: 1rem; /* Standard readable size */
+  font-size: 1rem; 
   line-height: 1.7;
   color: #4a4a4a;
-  text-align: left; /* Left align is generally more professional than justify */
+  text-align: left; 
 }
 
 .info-footer-line {
@@ -184,7 +189,8 @@
   }
 
   .founder-photo {
-    height: 350px;
+    height: auto;
+    max-height: 350px;
   }
 
   .info-bio {
