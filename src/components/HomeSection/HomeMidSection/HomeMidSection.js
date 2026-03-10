@@ -24,7 +24,7 @@ const HomeMidSection = () => {
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
           >
             <span className="mini-badge">Safety First</span>
-            <h1 className="font-zilla section-title">Drive with <span className="pink-accent">Confidence</span></h1>
+            <h1 className="font-zilla section-title">Drive with Pahel<span className="pink-accent">Confidence</span></h1>
             <p className="sub-text">
               PAHEL (Pink A Helpdrive Express) is a movement for women, by women. 
               We blend safety with independence for every Sakhi.
@@ -67,10 +67,10 @@ const HomeMidSection = () => {
             <h2 className="font-zilla small-h2">How <span className="pink-text">PAHEL</span> Works</h2>
             <div className="compact-steps">
               {[
-                { t: "Book", d: "Use the PAHEL app." },
-                { t: "Ride", d: "Travel with trained Sakhis." },
-                { t: "Secure", d: "Women-only environment." },
-                { t: "Digital", d: "No-hassle online payments." }
+                { t: "Book a Ride", d: "Request a ride through PAHEL app." },
+                { t: "Ride with a Sakhi", d: "A trained female driver picks you up safely." },
+                { t: "Travel with Confidence", d: "Enjoy a secure and comfortable journey." },
+              
               ].map((item, i) => (
                 <div key={i} className="mini-step-item">
                   <img src={greencheck} alt="check" className="check-icon" />

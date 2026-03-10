@@ -121,7 +121,14 @@
 .mini-tag {
   color: var(--primary-pink);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 1.2rem;
+  display: inline-block; /* Required for transform animations */
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
 }
 
 .event-heading {
@@ -138,6 +145,7 @@
 }
 
 /* --- Images Fix --- */
+/* Container remains the same */
 .event-visuals {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -147,34 +155,46 @@
 .img-wrapper-professional {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1; 
+  aspect-ratio: 1 / 1; /* Keeping your requested ratio */
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
-  background: #f8f8f8;
+  background: #f0f0f0; /* Color for the "letterbox" bars if image isn't square */
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .refined-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
+  /* FIX: 'contain' ensures the whole image is visible without cropping */
+  object-fit: contain; 
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  /* Optional: adds a slight padding so the image doesn't touch the edges */
+  padding: 5px; 
 }
 
+/* Enhanced Hover: subtle lift instead of just a zoom */
 .img-wrapper-professional:hover .refined-img {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 .img-overlay-hint {
   position: absolute;
   inset: 0;
-  background: rgba(229, 90, 123, 0.4);
+  /* Using a softer gradient for better "attractiveness" */
+  background: linear-gradient(
+    to bottom, 
+    rgba(229, 90, 123, 0.2), 
+    rgba(229, 90, 123, 0.6)
+  );
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: 0.3s ease;
+  transition: opacity 0.4s ease;
   backdrop-filter: blur(4px);
 }
 
@@ -182,13 +202,21 @@
   color: white;
   font-weight: 600;
   border: 2px solid white;
-  padding: 6px 14px;
+  padding: 8px 18px;
   border-radius: 30px;
   font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transform: translateY(10px);
+  transition: transform 0.4s ease;
 }
 
 .img-wrapper-professional:hover .img-overlay-hint {
   opacity: 1;
+}
+
+.img-wrapper-professional:hover .view-text {
+  transform: translateY(0);
 }
 
 /* --- Press Section --- */
@@ -199,19 +227,66 @@
 }
 
 .press-card-new {
+  position: relative;
   aspect-ratio: 3 / 4;
-  border-radius: 12px;
+  border-radius: 16px; /* Thoda zyada rounded for modern look */
   overflow: hidden;
-  border: 1px solid #eee;
+  border: 1px solid rgba(0,0,0,0.05);
   cursor: pointer;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  transition: all 0.4s ease;
+}
+
+/* Hover par card thoda lift hoga */
+.press-card-new:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  border-color: var(--primary-pink);
 }
 
 .press-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* FIX: Image poori dikhegi, kategi nahi */
+  object-fit: contain; 
+  padding: 15px;
+  
+  /* AUTOMATIC SLIDE ANIMATION */
+  animation: elegantSlide 10s infinite alternate ease-in-out;
+  filter: grayscale(20%); /* Thoda aesthetic look ke liye */
+  transition: filter 0.3s ease;
 }
 
+.press-card-new:hover .press-img {
+  filter: grayscale(0%);
+  animation-play-state: paused; /* Hover karne par animation ruk jayegi taaki user dekh sake */
+}
+
+/* Elegant Sliding Keyframes */
+@keyframes elegantSlide {
+  0% {
+    transform: scale(1) translateX(-5px) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) translateX(5px) rotate(1deg);
+  }
+  100% {
+    transform: scale(1) translateX(-5px) translateY(-5px) rotate(-1deg);
+  }
+}
+
+/* Extra decorative glass effect on top */
+.press-card-new::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+  pointer-events: none;
+}
 /* --- Mobile Fixes --- */
 @media (max-width: 992px) {
   .event-block {

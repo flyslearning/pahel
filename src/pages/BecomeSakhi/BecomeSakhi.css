@@ -81,7 +81,14 @@
   font-family: "Zilla Slab", serif;
   font-size: clamp(2rem, 4vw, 2.8rem);
   text-align: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 1rem;
+}
+.section-heading2 {
+  font-family: "Zilla Slab", serif;
+  font-size: clamp(1.5rem, 2vw, 1.4rem);
+  text-align: left;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 .benefits-grid {
@@ -89,6 +96,45 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
   margin-bottom: 6rem;
+}
+/* Container for the button to give it some breathing room */
+.contact-btn-container {
+  margin-top: 25px;
+  text-align: center; /* Centers the button */
+}
+
+/* The Button Style */
+.contact-now-btn {
+  display: inline-block;
+  background-color: #e84393; /* Matching the pink accent color from before */
+  color: #ffffff;
+  padding: 14px 30px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 50px; /* Rounded pill shape for a friendly look */
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(232, 67, 147, 0.3);
+}
+
+/* Hover Effect: Changes color and lifts slightly */
+.contact-now-btn:hover {
+  background-color: #d63384;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(232, 67, 147, 0.4);
+}
+
+/* Active Effect: Looks like it's being pressed */
+.contact-now-btn:active {
+  transform: translateY(-1px);
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 480px) {
+  .contact-now-btn {
+    width: 100%; /* Makes the button full-width on mobile */
+    text-align: center;
+  }
 }
 
 .benefit-card {
@@ -130,7 +176,7 @@
 .req-intro {
   text-align: center;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .req-list {

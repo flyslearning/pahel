@@ -73,7 +73,8 @@ const BecomeSakhi = () => {
       <section className="requirements-section">
         <div className="req-content">
           <h3 className="section-heading">Who Can Apply?</h3>
-          <p className="req-intro">We are looking for dedicated women with:</p>
+          <p className="req-intro">Any female above 18 years of age who knows driving, housewives, students etc,</p>
+          <h3 className="section-heading2">Requirements</h3>
           <ul className="req-list">
             <li>Valid Driving License</li>
             <li>Vehicle Registration (RC)</li>
@@ -81,9 +82,17 @@ const BecomeSakhi = () => {
             <li>Passion for Empowerment</li>
           </ul>
           <div className="support-note">
-            <p><strong>Missing Documents?</strong> Don’t worry. Our team will guide you through the documentation process step-by-step.</p>
-          </div>
+                <p>
+                  <strong>Missing documents or you are a fresher and want to join? </strong> 
+                    Don’t worry, our team will guide you through the process step by step.
+                </p>
+              </div>
         </div>
+        <div className="contact-btn-container">
+      <a href="/contact" className="contact-now-btn">
+        Contact Now
+      </a>
+    </div>
       </section>
 
       {/* New Call to Action Section */}
@@ -99,9 +108,9 @@ const BecomeSakhi = () => {
               rel="noopener noreferrer" 
               className="apply-main-btn"
             >
-              Apply via Google Form
+              Apply Now
             </a>
-            <p className="form-note">Estimated time: 2 minutes</p>
+            <p className="form-note">Click here to apply and get started !</p>
           </div>
         </div>
       </section>

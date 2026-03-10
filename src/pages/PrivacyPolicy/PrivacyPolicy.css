@@ -1,8 +1,121 @@
-.main-privacy{
-    padding-top: 9rem;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Zilla+Slab:wght@600;700&display=swap');
+
+:root {
+  --brand-pink: #e91e63;
+  --bg-white: #ffffff;
+  --soft-pink: #fff0f5;
+  --dark-text: #333333;
 }
 
-.privacy-description{
-    padding-top: 2rem;
-    line-height: 2rem;
+.Privacy-Wrapper {
+  padding: 120px 20px 80px;
+  background: var(--bg-white);
+  min-height: 100vh;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+/* Glow Effect */
+.bg-glow-policy {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(233, 30, 99, 0.08) 0%, transparent 70%);
+  z-index: 0;
+}
+
+/* Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.privacy-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.policy-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.hero-title-policy {
+  font-family: 'Zilla Slab', serif;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  color: var(--dark-text);
+  margin-bottom: 10px;
+}
+
+.pink-underline {
+  width: 80px;
+  height: 5px;
+  background: var(--brand-pink);
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+/* Glass Card Style */
+.policy-glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(233, 30, 99, 0.15);
+  padding: 50px;
+  border-radius: 30px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.04);
+}
+
+.p-main-policy {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #222;
+  margin-bottom: 30px;
+}
+
+.policy-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(233, 30, 99, 0.2), transparent);
+  margin: 30px 0;
+}
+
+.p-sub-policy {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+.p-sub-policy strong {
+  color: var(--brand-pink);
+}
+
+.policy-note {
+  margin-top: 40px;
+  padding: 20px;
+  background: var(--soft-pink);
+  border-left: 4px solid var(--brand-pink);
+  border-radius: 8px;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .Privacy-Wrapper {
+    padding-top: 100px;
+  }
+  .policy-glass-card {
+    padding: 30px 20px;
+  }
 }

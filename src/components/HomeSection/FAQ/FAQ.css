@@ -45,6 +45,69 @@
   margin: 1rem auto;
   border-radius: 10px;
 }
+/* FAQ Footer Styles */
+.faq-footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.footer-line {
+  height: 1px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1); /* Subtle divider */
+  margin-bottom: 25px;
+}
+
+.footer-content p {
+  color: black; /* Assuming a dark/glass background */
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.footer-content .highlight {
+  color: black; /* Matching the previous pink accent */
+  font-weight: 600;
+}
+
+/* Contact Button */
+.contact-now-btn {
+  display: inline-block;
+  background: #e84393;
+  color: white;
+  padding: 12px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(232, 67, 147, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-now-btn:hover {
+  background: #d63384;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(232, 67, 147, 0.5);
+  letter-spacing: 0.5px;
+}
+
+.contact-now-btn:active {
+  transform: translateY(0);
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .faq-footer {
+    padding: 15px;
+  }
+  
+  .contact-now-btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
 
 /* Tab Navigation */
 .tab-navigation {

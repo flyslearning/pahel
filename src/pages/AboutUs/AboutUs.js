@@ -81,17 +81,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Mission & Vision - Modern Split */}
-      <section className="mv-section reveal">
-        <div className="mv-card mission">
-          <h3>Our Mission</h3>
-          <p>To promote women empowerment and safety by providing safe, reliable, and affordable transportation services, fostering an inclusive community.</p>
-        </div>
-        <div className="mv-card vision">
-          <h3>Our Vision</h3>
-          <p>To create a place where every woman feels safe, comfortable, and confident while traveling alone, becoming a leading example of support.</p>
-        </div>
-      </section>
+
 
       {/* Core Values - Horizontal Scroll on Mobile */}
 <section className="values-section reveal" style={{ marginBottom: "60px" }}>

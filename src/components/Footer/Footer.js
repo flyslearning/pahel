@@ -8,6 +8,7 @@ import {
   FaLinkedin,
   FaFacebookMessenger,
   FaTwitter,
+  FaInstagram,
   // FaTwoo,
 } from "react-icons/fa";
 
@@ -44,8 +45,8 @@ const Footer = () => {
 
                   {/* Twitter Icon */}
                   <div className="media-icon">
-                    <Link to="/">
-                      <FaTwitter size={20} color="#E55A7B" />
+                    <Link to="https://www.instagram.com/__.pahel.__?igsh=d3ZqcnRldnU1Z3k2">
+                      <FaInstagram size={20} color="#E55A7B" />
                     </Link>
                   </div>
                 </div>
@@ -56,11 +57,6 @@ const Footer = () => {
               <p className="footer-points">
                 <a href="/about-us" className="footer-hyperlink-text-block">
                   About Us
-                </a>
-              </p>
-              <p className="footer-points">
-                <a href="/contact" className="footer-hyperlink-text-block">
-                  Contact Us
                 </a>
               </p>
               <p className="footer-points">
@@ -77,6 +73,11 @@ const Footer = () => {
                 <Link to="/safety" className="footer-hyperlink-text-block">
                   Safety
                 </Link>
+              </p>
+                            <p className="footer-points">
+                <a href="/contact" className="footer-hyperlink-text-block">
+                  Contact Us
+                </a>
               </p>
             </div>
           </div>
