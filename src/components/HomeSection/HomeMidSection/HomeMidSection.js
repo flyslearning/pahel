@@ -24,7 +24,7 @@ const HomeMidSection = () => {
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
           >
             <span className="mini-badge">Safety First</span>
-            <h1 className="font-zilla section-title">Drive with Pahel<span className="pink-accent">Confidence</span></h1>
+            <h1 className="font-zilla section-title">Go with Pahel<span className="pink-accent">Confidence</span></h1>
             <p className="sub-text">
               PAHEL (Pink A Helpdrive Express) is a movement for women, by women. 
               We blend safety with independence for every Sakhi.

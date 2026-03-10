@@ -87,21 +87,6 @@ const Header = ({ openForm }) => {
                 Resources
               </NavLink>
             </li>
-             <li
-              className="option"
-              onClick={() => {
-                closeMobileMenu();
-              }}
-            >
-              <NavLink
-                to="/contact"
-                exact
-                activeClassName="active-link"
-                className="redirects"
-              >
-                Contact
-              </NavLink>
-            </li>
             <li
               className="option"
               onClick={() => {
@@ -117,6 +102,22 @@ const Header = ({ openForm }) => {
                 Gallery
               </NavLink>
             </li>
+             <li
+              className="option"
+              onClick={() => {
+                closeMobileMenu();
+              }}
+            >
+              <NavLink
+                to="/contact"
+                exact
+                activeClassName="active-link"
+                className="redirects"
+              >
+                Contact
+              </NavLink>
+            </li>
+            
             
           <li className="option mobile-menu" onClick={closeMobileMenu}>
             <Link to="/schedule-ride" className="redirects">
@@ -137,10 +138,10 @@ const Header = ({ openForm }) => {
             </li>
             <li onClick={closeMobileMenu} className="helpline-design">
               <img src={helpline} className="helpline-image"></img>
-              <Link to="tel:+91 8368629913" className="phone-number-design">
+              <Link to="tel:+91 7895409555" className="phone-number-design">
                 <div className="helpline-text desktop-menu">
                   Helpline Number<br></br>
-                  <p className="phone-text">+91 8368629913</p>
+                  <p className="phone-text">+91 7895409555</p>
                 </div>{" "}
               </Link>
             </li>

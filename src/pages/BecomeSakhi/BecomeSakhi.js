@@ -77,7 +77,7 @@ const BecomeSakhi = () => {
           <h3 className="section-heading2">Requirements</h3>
           <ul className="req-list">
             <li>Valid Driving License</li>
-            <li>Vehicle Registration (RC)</li>
+            <li>Vehicle Registration RC (if applicable)</li>
             <li>Aadhaar Card</li>
             <li>Passion for Empowerment</li>
           </ul>

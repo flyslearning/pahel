@@ -125,16 +125,16 @@ const Footer = () => {
               <p className="footer-points">
                 E-mail :&nbsp;
                 <Link
-                  to="mailto:pahel.pvtltd@gmail.com"
+                  to="mailto:contact@pinkpahel.in"
                   className="footer-hyperlink"
                 >
-                  pahel.pvtltd@gmail.com
+                  contact@pinkpahel.in
                 </Link>
               </p>
               <p className="footer-points">
                 Phone Number :&nbsp;
-                <Link to="tel: +91 8368629913" className="footer-hyperlink">
-                  +91 8368629913
+                <Link to="tel: +91 7895409555" className="footer-hyperlink">
+                  +91 7895409555
                 </Link>
               </p>
               {/* <p className="footer-points">
