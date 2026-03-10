@@ -268,7 +268,113 @@
   font-size: 0.9rem;
   opacity: 0.6;
 }
+/* --- Container Setup --- */
+.sakhi-intro-v2 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px; /* Space between rows */
+}
 
+/* Common Row Style */
+.sakhi-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+/* Second Row Flip Logic */
+.sakhi-row.reverse {
+  direction: rtl; 
+}
+
+.sakhi-row.reverse .sakhi-text-block {
+  direction: ltr; 
+}
+
+/* --- Image Styling (Animated & No White Border) --- */
+.sakhi-image-block {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  /* Floating animation apply ki gayi hai */
+  animation: floatImage 5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.sakhi-split-img {
+  width: 100%;
+  height: 400px; /* Fixed height for uniform rectangle look */
+  object-fit: cover; /* Isse white border/background khatam ho jayega */
+  border-radius: 30px; /* Professional rounded corners */
+  z-index: 2;
+  position: relative;
+  box-shadow: 0 15px 35px rgba(233, 30, 99, 0.15);
+  transition: transform 0.4s ease;
+}
+
+/* Hover effect for a slight zoom */
+.sakhi-split-img:hover {
+  transform: scale(1.02);
+}
+
+/* --- Keyframes for Automatic Animation --- */
+@keyframes floatImage {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px); /* Image halki upar move hogi */
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* --- Text Styling --- */
+.sakhi-text-block {
+  flex: 1;
+}
+
+.sakhi-title {
+  font-family: 'Zilla Slab', serif;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  color: #e91e63;
+  margin-bottom: 12px;
+}
+
+.intro-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 992px) {
+  .sakhi-row, .sakhi-row.reverse {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+    direction: ltr; 
+  }
+
+  .sakhi-split-img {
+    height: 300px; /* Mobile par thoda chota rectangle */
+  }
+  
+  .sakhi-image-block {
+    animation: none; /* Mobile par battery/performance ke liye animation off */
+  }
+
+  .sakhi-intro-v2 {
+    gap: 70px;
+    padding-top: 40px;
+  }
+}
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
   .Sakhi-Main { padding-top: 6rem; }

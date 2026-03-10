@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import "./BecomeSakhi.css";
 import pinkline from "../../assets/images/rectangle-bg.png";
+import sakhiHero from "../../assets/images/IMG_6253.PNG";
+import sakhiGroup from "../../assets/images/IMG_6258.PNG"; // Example image
 
 const BecomeSakhi = () => {
   useEffect(() => {
@@ -13,31 +15,47 @@ const BecomeSakhi = () => {
   return (
     <div className="Sakhi-Main">
       {/* Header Section */}
-      <section className="sakhi-intro">
-        <div className="about-header">
-          <div className="title-wrapper">
-            <img src={pinkline} className="about-pinkline" alt="decor" />
-            <h1 className="sakhi-title">Become a Sakhi</h1>
-          </div>
-          <p className="sakhi-subtitle">Drive with pride. Earn with dignity. Empower with purpose.</p>
+     <section className="sakhi-intro-v2">
+  {/* First Paragraph + Image (Text Left, Image Right) */}
+  <div className="sakhi-row">
+    <div className="sakhi-text-block">
+      <div className="about-header">
+        <div className="title-wrapper">
+          <img src={pinkline} className="about-pinkline" alt="decor" />
+          <h1 className="sakhi-title">Become a Sakhi</h1>
         </div>
-        
-        <div className="sakhi-text-container">
-          <p className="intro-paragraph">
-            At <strong>Pink A Helpdrive Express Private Limited (PAHEL)</strong>, we believe every woman deserves 
-            the freedom to move — and the opportunity to lead. As a <strong>Sakhi</strong>, you are not just a driver. 
-            You are a symbol of safety, strength, and self-reliance.
-          </p>
-          <p className="intro-paragraph">
-            Join our women-led movement built on the vision of <span className="pink-highlight">“by women, for women.”</span> 
-            Together, we are redefining mobility and creating a trusted space where women feel secure, respected, 
-            and confident every time they travel.
-          </p>
-          <div className="vision-tag">
-             Vision: <span className="pink-highlight">“By women, for women.”</span> 
-          </div>
-        </div>
-      </section>
+        <p className="sakhi-subtitle">Drive with pride. Earn with dignity. Empower with purpose.</p>
+      </div>
+      <p className="intro-paragraph">
+        At <strong>Pink A Helpdrive Express Private Limited (PAHEL)</strong>, we believe every woman deserves 
+        the freedom to move — and the opportunity to lead. As a <strong>Sakhi</strong>, you are not just a driver. 
+        You are a symbol of safety, strength, and self-reliance.
+      </p>
+    </div>
+    <div className="sakhi-image-block">
+      <img src={sakhiHero} alt="Empowered Woman" className="sakhi-split-img" />
+      <div className="img-frame-decoration"></div>
+    </div>
+  </div>
+
+  {/* Second Paragraph + Image (Image Left, Text Right) */}
+  <div className="sakhi-row reverse">
+    <div className="sakhi-text-block">
+      <p className="intro-paragraph">
+        Join our women-led movement built on the vision of <span className="pink-highlight">“by women, for women.”</span> 
+        Together, we are redefining mobility and creating a trusted space where women feel secure, respected, 
+        and confident every time they travel.
+      </p>
+      <div className="vision-tag">
+         Vision: <span className="pink-highlight">“By women, for women.”</span> 
+      </div>
+    </div>
+    <div className="sakhi-image-block">
+      <img src={sakhiGroup} alt="Women Driving" className="sakhi-split-img" />
+      <div className="img-frame-decoration-left"></div>
+    </div>
+  </div>
+</section>
 
       {/* Why Become a Sakhi Section */}
       <section className="why-sakhi">
@@ -77,7 +95,7 @@ const BecomeSakhi = () => {
           <h3 className="section-heading2">Requirements</h3>
           <ul className="req-list">
             <li>Valid Driving License</li>
-            <li>Vehicle Registration RC (if applicable)</li>
+            <li>Vehicle Registration(if applicable)</li>
             <li>Aadhaar Card</li>
             <li>Passion for Empowerment</li>
           </ul>
