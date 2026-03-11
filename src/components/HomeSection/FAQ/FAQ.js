@@ -45,7 +45,16 @@ const FAQ = () => {
     },
     { 
       q: "How can I become a Sakhi?", 
-      a: "Simply click on become a sakhi or contact 7895409555 and get started." 
+      a:  <>
+          Simply click on{" "}
+          <a 
+            href="https://forms.gle/cLHLphNt8dZj2oug8" 
+            style={{ color: "#e91e63", fontWeight: "600", textDecoration: "underline" }}
+          >
+            Apply now
+          </a>{" "}
+          or contact <strong>7895409555</strong> and get started.
+        </>
     },
     { 
       q: "Who all can join PAHEL what is the benefit to be one?", 
