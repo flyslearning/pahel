@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import logo from "../../assets/images/IMG_6262.JPG.jpeg";
 import startupIndia from "./images/startupindia.webp";
-import partnerImg from "./images/IMG_6263.PNG";
+import partnerImg from "./images/img1122.jpeg";
 
 import {
   FaLinkedin,
@@ -171,13 +171,13 @@ const Footer = () => {
           <img
             src={startupIndia}
             alt="Startup India"
-            style={{ height: "40px" }}
+            style={{ height: "50px" }}
           />
 
           <img
             src={partnerImg}
             alt="Partner"
-            style={{ height: "40px" }}
+            style={{ height: "60px" }}
           />
         </div>
       </div>
