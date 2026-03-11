@@ -44,6 +44,7 @@ const AboutUs = () => {
       </section>
 
       {/* The Journey Section */}
+{/* The Journey Section */}
 <section className="journey-grid reveal">
   <div className="journey-card reveal">
     <h2 className="section-h">A Seed of Change</h2>

@@ -70,7 +70,7 @@ const HomeMidSection = () => {
           fontWeight: "500"
         }}
       >
-        Know Your Journey
+        Know our Journey
       </a>
     </motion.div>
   </div>

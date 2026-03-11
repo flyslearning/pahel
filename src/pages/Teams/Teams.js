@@ -26,7 +26,7 @@ const Teams = () => {
   )
 },
     {
-  name: "Anshika Mittal",
+  name: "Ms. Anshika Mittal ",
   position: "Co-Founder, Managing Director",
   image: founder2,
   description: (
@@ -40,8 +40,8 @@ const Teams = () => {
   )
 },
     {
-  name: "Aditi Mittal",
-  position: "Co-Founder",
+  name: "C.S. Aditi Mittal ",
+  position: "Co-Founder, Managing Director",
   image: founder3,
   description: (
     <div>

@@ -3,6 +3,8 @@ import "./Footer.css";
 import { Link } from "react-router-dom";
 
 import logo from "../../assets/images/IMG_6262.JPG.jpeg";
+import startupIndia from "./images/startupindia.webp";
+import partnerImg from "./images/IMG_6263.PNG";
 
 import {
   FaLinkedin,
@@ -149,6 +151,38 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <div className="partners-container" style={{ textAlign: "center", marginBottom: "15px" }}>
+  
+ 
+      {/* Partners Section */}
+      <div style={{ textAlign: "center", marginBottom: "15px" }}>
+        <p style={{ marginBottom: "10px", fontWeight: "500" }}>
+          Supported By
+        </p>
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "20px",
+            flexWrap: "wrap",
+          }}
+        >
+          <img
+            src={startupIndia}
+            alt="Startup India"
+            style={{ height: "40px" }}
+          />
+
+          <img
+            src={partnerImg}
+            alt="Partner"
+            style={{ height: "40px" }}
+          />
+        </div>
+      </div>
+
+</div>
         <div className="copyright-container">
           <p className="copyright-info">
             Copyright @ Pahel 2026. Developed by{" "}
