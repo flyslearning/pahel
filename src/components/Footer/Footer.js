@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.css";
 import { Link } from "react-router-dom";
 
-import logo from "../../assets/images/logo192.png";
+import logo from "../../assets/images/IMG_6262.JPG.jpeg";
 
 import {
   FaLinkedin,
@@ -77,11 +77,11 @@ const Footer = () => {
           <div className="footer-bottom">
             <div className="third-footer-block">
               <p className="footer-heading">Important Links</p>
-              <p className="footer-points">
+              {/* <p className="footer-points">
                 <Link to="/pricing" className="footer-hyperlink-text-block">
                   Pricing
                 </Link>
-              </p>
+              </p> */}
               <p className="footer-points">
                 <Link
                   to="/privacy-policy"

@@ -41,20 +41,40 @@ const HomeMidSection = () => {
       </section>
 
       {/* --- JOURNEY (COMPACT) --- */}
-      <section className="journey-accent">
-        <div className="container">
-          <motion.div 
-            className="journey-card-small"
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
-          >
-            <h2 className="font-zilla">Our Journey</h2>
-            <p>
-              Started as a simple question: <strong>"What if the driver was a woman?"</strong> 
-              Today, we provide dignity and freedom to women across the city.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+<section className="journey-accent">
+  <div className="container">
+    <motion.div 
+      className="journey-card-small"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeInUp}
+    >
+      <h2 className="font-zilla">Our Journey</h2>
+
+      <p>
+        Started as a simple question: <strong>"What if the driver was a woman?"</strong> 
+        Today, we provide dignity and freedom to women across the city.
+      </p>
+
+      <a
+        href="/about-us"
+        style={{
+          display: "inline-block",
+          marginTop: "15px",
+          padding: "10px 18px",
+          backgroundColor: "#e91e63",
+          color: "#fff",
+          textDecoration: "none",
+          borderRadius: "6px",
+          fontWeight: "500"
+        }}
+      >
+        Know Your Journey
+      </a>
+    </motion.div>
+  </div>
+</section>
 
       {/* --- HOW IT WORKS --- */}
       <section className="how-it-works-clean">

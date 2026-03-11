@@ -31,10 +31,6 @@ const Teams = () => {
   image: founder2,
   description: (
     <div>
-      <p>
-        Ms. Anshika Mittal (Co-Founder, Managing Director) recognized the clear need for safer and more reliable travel options while observing the everyday mobility challenges faced by many women. Motivated by the desire to address this gap, she took the initiative to build a solution that could make women’s travel safer and more reliable.
-      </p>
-
       <p style={{ fontStyle: "italic", marginTop: "10px", color: "#555" }}>
         “While observing the everyday mobility challenges faced by many women, a clear need for safer and more reliable travel options was recognised. Motivated by the desire to address this gap, we took an initiative to build a solution that could make women’s travel safer and more reliable.
         <br /><br />
@@ -49,9 +45,6 @@ const Teams = () => {
   image: founder3,
   description: (
     <div>
-      <p>
-        C.S. Aditi Mittal (Co-Founder) co-founded PAHEL with the shared vision of building a platform that supports safer and more reliable mobility for women. She focuses on strengthening the operational and community aspects, ensuring a smooth and supportive experience for both passengers and drivers.
-      </p>
 
       <p style={{ fontStyle: "italic", marginTop: "10px", color: "#555" }}>
         “It was realised that commuting for women often comes with safety issues, uncomfortable experiences, societal barriers etc, which needs to be addressed.

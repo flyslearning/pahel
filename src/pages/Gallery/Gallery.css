@@ -298,6 +298,7 @@
   }
 }
 
+
 @media (max-width: 550px) {
   .event-visuals {
     grid-template-columns: 1fr;

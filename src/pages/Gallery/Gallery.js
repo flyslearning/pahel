@@ -119,23 +119,31 @@ const Gallery = () => {
         ))}
 
         <section className="press-section">
-          <div className="press-header">
-            <h3>Press Coverage</h3>
-            <div className="accent-line"></div>
-          </div>
-          <div className="press-grid">
-            {pressImages.map((imgSrc, index) => (
-              <motion.div 
-                key={index} 
-                className="press-card-new"
-                whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
-                onClick={() => setSelectedImg(imgSrc)}
-              >
-                 <img src={imgSrc} alt="Press News" className="press-img" loading="lazy" />
-              </motion.div>
-            ))}
-          </div>
-        </section>
+  <div className="press-header">
+    <h3>Press Coverage</h3>
+    <div className="accent-line"></div>
+  </div>
+
+  <div className="press-grid">
+    {pressImages.map((imgSrc, index) => (
+      <motion.div
+        key={index}
+        className="press-card-new"
+        whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
+        onClick={() => setSelectedImg(imgSrc)}
+      >
+        <div className="press-img-wrapper">
+          <img
+            src={imgSrc}
+            alt="Press News"
+            className="press-img"
+            loading="lazy"
+          />
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</section>
       </main>
     </div>
   );
